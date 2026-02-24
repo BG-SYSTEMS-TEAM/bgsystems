@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG Systems | IT Solutions Company in Chennai | Network, Cloud & IT Support</title>
+    <meta name="description"
+        content="BG Systems is a leading IT solutions company in Chennai offering network infrastructure, cloud migration, computer sales & IT AMC services. Secure and scalable business IT solutions">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                fontFamily: {
+                    sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    syne: ['Syne', 'sans-serif'],
+                    mono: ['JetBrains Mono', 'monospace'],
+                },
+                extend: {
+                    colors: {
+                        background: 'var(--bg)',
+                        foreground: 'var(--text)',
+                        secondary: 'var(--secondary-text)',
+                        brand: {
+                            blue: '#3A428C',
+                            yellow: '#FFCD57',
+                            dark: '#0a0a0a',
+                        },
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out infinite reverse',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'pulse-glow': 'pulse-glow 4s ease-in-out infinite',
+                        'beam-drop': 'beam-drop 4s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+                        'marquee': 'marquee 40s linear infinite',
+                    },
+                    keyframes: {
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' },
+                        },
+                        'beam-drop': {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '50%': { opacity: '1' },
+                            '100%': { transform: 'translateY(500%)', opacity: '0' }
+                        },
+                        'marquee': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #ffffff;
+            --secondary-text: #A3A3A3;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --brand-yellow-muted: rgba(255, 205, 87, 0.2);
+            --card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --nav-bg: rgba(0, 0, 0, 0.4);
+        }
+
+        .light {
+            --bg: #F8FAFC;
+            --text: #0F172A;
+            --secondary-text: #475569;
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(0, 0, 0, 0.05);
+            --brand-yellow-muted: rgba(255, 205, 87, 0.4);
+            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            --nav-bg: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Base Settings */
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        /* Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Scroll Snapping */
+        .scroll-container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y proximity;
+            scroll-behavior: smooth;
+            overscroll-behavior-y: contain;
+        }
+
+        section {
+            scroll-snap-align: start;
+        }
+
+        /* Border Gradient Component */
+        .border-gradient {
+            position: relative;
+        }
+
+        .border-gradient::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            background: linear-gradient(225deg, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.0) 100%);
+            pointer-events: none;
+        }
+
+        /* Animated Shiny CTA Styles */
+        @property --gradient-angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @property --gradient-angle-offset {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        @property --gradient-percent {
+            syntax: "<percentage>";
+            initial-value: 20%;
+            inherits: false;
+        }
+
+        @property --gradient-shine {
+            syntax: "<color>";
+            initial-value: #3A428C;
+            inherits: false;
+        }
+
+        .shiny-cta {
+            --gradient-angle: 0deg;
+            --gradient-angle-offset: 0deg;
+            --gradient-percent: 20%;
+            --gradient-shine: #FFCD57;
+            --shadow-size: 2px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 9999px;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            line-height: 1.2;
+            font-weight: 500;
+            color: #ffffff;
+            background: linear-gradient(#000000, #000000) padding-box,
+                conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)), transparent 0%, #3A428C 5%, var(--gradient-shine) 15%, #3A428C 30%, transparent 40%, transparent 100%) border-box;
+            border: 2px solid transparent;
+            box-shadow: inset 0 0 0 1px #1a1818;
+            outline: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            isolation: isolate;
+            outline-offset: 4px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            animation: border-spin 2.5s linear infinite;
+        }
+
+        @keyframes border-spin {
+            to {
+                --gradient-angle: 360deg;
+            }
+        }
+
+        /* Exploded Canvas Styles */
+        .parallax-section {
+            height: 250vh;
+            position: relative;
+        }
+
+        .canvas-container {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #exploded-canvas {
+            max-width: 100vw;
+            max-height: 100vh;
+            object-fit: contain;
+        }
+
+        .canvas-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg) 100%);
+            pointer-events: none;
+        }
+
+        .shiny-cta:hover {
+            transform: scale(1.02);
+        }
+
+        .shiny-cta::before {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            --size: calc(100% - 6px);
+            --position: 2px;
+            --space: 4px;
+            width: var(--size);
+            height: var(--size);
+            background: radial-gradient(circle at var(--position) var(--position), white 0.5px, transparent 0) padding-box;
+            background-size: var(--space) var(--space);
+            background-repeat: space;
+            mask-image: conic-gradient(from calc(var(--gradient-angle) + 45deg), black, transparent 10% 90%, black);
+            border-radius: inherit;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .shiny-cta::after {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(-50deg, transparent, #3A428C, transparent);
+            mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+            opacity: 0.6;
+            animation: shimmer 4s linear infinite;
+        }
+
+        .shiny-cta span {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+        }
+
+        @keyframes shimmer {
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Perspective & Component styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--card-shadow);
+        }
+
+        .font-syne {
+            font-family: 'Syne', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* HUD Overlay for Parallax */
+        .hud-overlay {
+            background: radial-gradient(circle at center, transparent 30%, rgba(0, 0, 0, 0.4) 100%);
+            pointer-events: none;
+        }
+
+        .scanning-line {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, #FFCD57, transparent);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            opacity: 0.5;
+            animation: scanning 8s linear infinite;
+        }
+
+        @keyframes scanning {
+            0% {
+                top: 10%;
+            }
+
+            50% {
+                top: 90%;
+            }
+
+            100% {
+                top: 10%;
+            }
+        }
+
+        /* Animate on Scroll Enhancements */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(10px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .card-stack-item {
+            position: sticky;
+            top: 15vh;
+            margin-bottom: 10vh;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #FFCD57;
+            border-radius: 10px;
+        }
+
+        /* Animation On Scroll Styles */
+        @keyframes animationIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+                filter: blur(8px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        .animate-on-scroll {
+            animation-play-state: paused !important;
+            opacity: 0;
+        }
+
+        .animate-on-scroll.animate {
+            animation: animationIn 0.8s ease-out 0.1s both !important;
+        }
+
+        /* Nav Dot Active State */
+        .nav-dot.active {
+            height: 2rem;
+            background-color: #FFCD57;
+            box-shadow: 0 0 10px rgba(255, 205, 87, 0.5);
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-blue/30 selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 px-6 py-6 flex items-center justify-between pointer-events-none">
+        <!-- Header Gradient Background for Visibility -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[var(--bg)]/80 via-[var(--bg)]/40 to-transparent -z-10 h-32">
+        </div>
+        <div class="pointer-events-auto">
+            <div class="flex items-center justify-center p-2 group cursor-pointer transition">
+                <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Systems"
+                    class="h-14 md:h-24 w-auto dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] light:drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] light:invert hover:scale-105 transition-all duration-500">
+            </div>
+        </div>
+        <nav
+            class="pointer-events-auto hidden lg:flex items-center gap-8 bg-black/40 dark:bg-black/40 light:bg-white/80 backdrop-blur-xl px-10 py-3 rounded-full border border-white/5 dark:border-white/5 light:border-black/5 shadow-2xl">
+            <a href="#section-0" onclick="scrollToIndex(0)"
+                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Home</a>
+            <a href="#section-1" onclick="scrollToIndex(1)"
+                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">About</a>
+            <a href="#section-2" onclick="scrollToIndex(2)"
+                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Vision</a>
+            <a href="#section-3" onclick="scrollToIndex(3)"
+                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Services</a>
+            <a href="#section-kb" onclick="scrollToIndex(6)"
+                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Knowledge</a>
+            <a href="#contact" onclick="scrollToIndex(7)"
+                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Contact</a>
+        </nav>
+        <div class="pointer-events-auto flex items-center gap-4">
+            <!-- Theme Toggle -->
+            <button onclick="toggleTheme()" id="theme-toggle"
+                class="h-10 w-10 rounded-full glass-panel flex items-center justify-center text-brand-yellow hover:scale-110 transition-all border border-white/10 dark:border-white/10 light:border-black/10">
+                <i data-lucide="moon" class="w-5 h-5 dark-icon"></i>
+                <i data-lucide="sun" class="w-5 h-5 light-icon hidden"></i>
+            </button>
+            <button
+                class="inline-flex overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2 focus:ring-offset-slate-50 h-10 rounded-full pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative">
+                <span
+                    class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFCD57_0%,#3A428C_50%,#FFCD57_100%)]"></span>
+                <span
+                    class="inline-flex cursor-pointer items-center justify-center transition-colors hover:bg-slate-950/80 text-[10px] font-bold uppercase tracking-widest text-white bg-slate-950 w-full h-full rounded-full px-6 backdrop-blur-3xl">
+                    Get a Quote
+                </span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Dynamic Side Navigation -->
+    <div class="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-6 pointer-events-auto">
+        <div onclick="scrollToIndex(0)"
+            class="nav-dot active w-1.5 h-4 bg-[#FFCD57] rounded-full transition-all duration-500 cursor-pointer hover:scale-x-150"
+            title="Home"></div>
+        <div onclick="scrollToIndex(1)"
+            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFCD57]/60"
+            title="About"></div>
+        <div onclick="scrollToIndex(2)"
+            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFCD57]/60"
+            title="Vision"></div>
+        <div onclick="scrollToIndex(3)"
+            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFCD57]/60"
+            title="Network"></div>
+        <div onclick="scrollToIndex(4)"
+            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFCD57]/60"
+            title="Cloud"></div>
+        <div onclick="scrollToIndex(5)"
+            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFCD57]/60"
+            title="Hardware/AMC"></div>
+        <div onclick="scrollToIndex(6)"
+            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFCD57]/60"
+            title="Knowledge"></div>
+        <div onclick="scrollToIndex(7)"
+            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFCD57]/60"
+            title="Contact"></div>
+    </div>
+
+    <!-- Main Scroll Container -->
+    <main id="main-scroll" class="scroll-container no-scrollbar relative z-10">
+
+        <!-- SECTION 0: HERO -->
+        <section id="section-0"
+            class="h-screen w-full relative snap-center overflow-hidden flex items-center justify-center">
+            <!-- Background Video -->
+            <div class="absolute inset-0 z-0">
+                <div
+                    class="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-[var(--bg)]/40 to-[var(--bg)]/20 z-10">
+                </div>
+                <video id="hero-video" autoplay muted loop playsinline class="w-full h-full object-cover opacity-60">
+                    <source src="Create_a_smooth_202602182312.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div
+                class="relative z-20 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
+                <div class="space-y-10 animate-on-scroll">
+                    <!-- Hero Main Logo -->
+                    <div class="mb-12">
+                        <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Systems"
+                            class="h-24 md:h-32 w-auto dark:drop-shadow-[0_0_40px_rgba(255,205,87,0.2)] light:drop-shadow-[0_0_20px_rgba(0,0,0,0.1)] light:invert">
+                    </div>
+                    <div
+                        class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#FFCD57] backdrop-blur-md">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFCD57] opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-[#FFCD57]"></span>
+                        </span>
+                        <span>Chennai's Leading IT Partner</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.85] text-foreground">
+                        Future-Ready <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFCD57] via-white to-[#FFCD57]">IT
+                            Infrastructure.</span>
+                    </h1>
+
+                    <p class="text-xl md:text-2xl text-neutral-300 max-w-xl font-medium leading-relaxed">
+                        BG Systems delivers enterprise-grade IT infrastructure, cloud solutions, and
+                        cybersecurity-backed network systems that help businesses scale securely and efficiently.
+                    </p>
+
+                    <div class="flex flex-wrap gap-6 pt-6">
+                        <button class="shiny-cta focus:outline-none" onclick="scrollToIndex(7)">
+                            <span>Schedule a Consultation</span>
+                        </button>
+
+                        <button
+                            class="group relative inline-flex items-center justify-center px-8 py-4 text-[#FFCD57] tracking-wider text-sm font-bold uppercase transition-all hover:text-foreground"
+                            onclick="window.location.href='tel:+919843099285'">
+                            <span class="mr-3">Talk to an IT Expert</span>
+                            <div
+                                class="relative flex items-center justify-center w-8 h-8 rounded-full border border-[#FFCD57]/30 group-hover:border-[#FFCD57] transition-colors">
+                                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-[#FFCD57]"></i>
+                            </div>
+                            <span class="text-sm font-semibold tracking-wide text-foreground/80">Enterprise
+                                Security</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
+                                <i data-lucide="zap" class="w-5 h-5 text-[#FFCD57]"></i>
+                            </div>
+                            <span class="text-sm font-semibold tracking-wide text-foreground/80">99.9% Uptime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: ABOUT BG SYSTEMS (WINDOW MOCKUP) -->
+        <section id="section-1" class="min-h-screen w-full relative flex items-center bg-background py-20">
+            <div class="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center">
+
+                <!-- Left: Browser Mockup -->
+                <div class="relative w-full group perspective-1000 animate-on-scroll">
+                    <div
+                        class="relative rounded-2xl bg-[#171717] overflow-hidden shadow-2xl border border-white/10 transform transition-all duration-700 hover:scale-[1.02]">
+                        <!-- Window Controls -->
+                        <div
+                            class="h-10 bg-[#1e1e1e] border-b border-white/5 flex items-center px-4 gap-2 justify-between">
+                            <div class="flex gap-1.5 focus-within:">
+                                <div class="w-3 h-3 rounded-full bg-[#ff5f57] opacity-60"></div>
+                                <div class="w-3 h-3 rounded-full bg-[#febc2e] opacity-60"></div>
+                                <div class="w-3 h-3 rounded-full bg-[#28c840] opacity-60"></div>
+                            </div>
+                            <div
+                                class="flex-1 max-w-md mx-4 bg-black/40 rounded shadow-sm h-6 border border-white/5 text-[9px] flex items-center justify-center text-foreground/40 font-bold uppercase tracking-widest">
+                                bgsystems.in/enterprise-monitor
+                            </div>
+                            <div class="w-10"></div>
+                        </div>
+
+                        <!-- Browser Content -->
+                        <div class="flex flex-col md:flex-row h-[480px] bg-[#0a0a0a]">
+                            <!-- Main View -->
+                            <div class="flex-1 p-8 relative flex flex-col border-r border-white/5">
+                                <div class="flex justify-between items-start mb-8">
+                                    <div>
+                                        <div
+                                            class="text-[10px] font-black text-[#FFCD57] tracking-[.3em] uppercase mb-1">
+                                            Infrastructure Health</div>
+                                        <h3 class="text-xl font-bold text-foreground">Central Data Center 01</h3>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <div class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                                        <span class="text-[10px] font-bold text-green-500 uppercase">Operational</span>
+                                    </div>
+                                </div>
+
+                                <!-- Visual Chart Placeholder -->
+                                <div class="flex-1 flex flex-col gap-4">
+                                    <div class="grid grid-cols-3 gap-3">
+                                        <div class="h-20 rounded-xl bg-white/5 border border-white/5 p-3">
+                                            <span class="text-[10px] text-foreground/40 font-bold block mb-1">CPU
+                                                Load</span>
+                                            <span class="text-xl font-black text-foreground">24%</span>
+                                        </div>
+                                        <div class="h-20 rounded-xl bg-white/5 border border-white/5 p-3">
+                                            <span
+                                                class="text-[10px] text-foreground/40 font-bold block mb-1">Network</span>
+                                            <span class="text-xl font-black text-[#FFCD57]">1.2Gbps</span>
+                                        </div>
+                                        <div class="h-20 rounded-xl bg-white/5 border border-white/5 p-3">
+                                            <span
+                                                class="text-[10px] text-foreground/40 font-bold block mb-1">Uptime</span>
+                                            <span class="text-xl font-black text-foreground">99.9%</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex-1 bg-gradient-to-t from-white/5 to-transparent rounded-2xl border border-white/5 relative overflow-hidden p-6">
+                                        <div class="absolute inset-0 opacity-10 flex items-center justify-center">
+                                            <i data-lucide="server" class="w-48 h-48 text-foreground"></i>
+                                        </div>
+                                        <div class="relative z-10 flex flex-col justify-end h-full">
+                                            <span class="text-foreground/60 text-xs font-bold leading-relaxed">System
+                                                Architecture optimized for Enterprise Scale. Deployment verified across
+                                                12 node clusters.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sidebar Mockup -->
+                            <div class="w-full md:w-[240px] bg-neutral-900/50 flex flex-col shrink-0">
+                                <div class="p-4 border-b border-white/5 bg-black/20">
+                                    <span
+                                        class="text-[10px] font-black text-foreground/40 uppercase tracking-widest">Active
+                                        Services</span>
+                                </div>
+                                <div class="flex-1 p-4 flex flex-col gap-3 custom-scrollbar overflow-y-auto">
+                                    <div
+                                        class="p-3 rounded-xl bg-[#FFCD57]/10 border border-[#FFCD57]/20 flex items-center gap-3">
+                                        <i data-lucide="cable" class="w-4 h-4 text-[#FFCD57]"></i>
+                                        <span class="text-[10px] font-bold text-foreground">Structured Cabling</span>
+                                    </div>
+                                    <div
+                                        class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3">
+                                        <i data-lucide="cloud" class="w-4 h-4 text-foreground/40"></i>
+                                        <span class="text-[10px] font-bold text-foreground/60">Cloud Migration</span>
+                                    </div>
+                                    <div
+                                        class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3">
+                                        <i data-lucide="shield" class="w-4 h-4 text-foreground/40"></i>
+                                        <span class="text-[10px] font-bold text-foreground/60">Cybersecurity</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section Info -->
+                <div class="space-y-8 animate-on-scroll">
+                    <div
+                        class="inline-flex items-center gap-2 text-[#FFCD57] text-xs uppercase tracking-[0.4em] font-black">
+                        <i data-lucide="binary" class="w-4 h-4"></i>
+                        <span>Chennai's Core IT Partner</span>
+                    </div>
+                    <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-foreground leading-[0.9]">
+                        Elite Managed <br>
+                        <span class="text-brand-yellow drop-shadow-[0_0_15px_rgba(255,205,87,0.3)]">Solutions.</span>
+                    </h2>
+                    <p class="text-lg text-secondary leading-relaxed font-medium">
+                        We build more than just networks; we curate digital foundations for enterprises that demand
+                        precision. From high-speed fiber backbone to complex cloud architecture, BG Systems is your
+                        strategic infrastructure partner.
+                    </p>
+                    <div class="grid grid-cols-1 gap-4 pt-4">
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#FFCD57] transition-all duration-500">
+                                <i data-lucide="zap" class="w-5 h-5 text-[#FFCD57] group-hover:text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-foreground font-bold text-base tracking-tight">Rapid Deployment</h4>
+                                <p class="text-xs text-neutral-500 font-medium">Fast-track implementation with zero
+                                    downtime.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div
+                                class="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[#FFCD57] transition-all duration-500">
+                                <i data-lucide="server" class="w-5 h-5 text-[#FFCD57] group-hover:text-black"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-foreground font-bold text-base tracking-tight">Enterprise Scaling</h4>
+                                <p class="text-xs text-neutral-500 font-medium">Infrastructure designed to grow with
+                                    your vision.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: EXPLODED VIEW (PARALLAX) -->
+        <section id="section-2" class="parallax-section snap-start bg-background">
+            <div class="canvas-container">
+                <div class="absolute top-20 left-1/2 -translate-x-1/2 z-10 text-center space-y-4 w-full px-6">
+                    <div
+                        class="inline-flex items-center gap-2 text-[#FFCD57] text-xs uppercase tracking-[0.3em] font-bold">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                        <span>Innovation in Hardware</span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-foreground">Exploded Components
+                    </h2>
+                    <div class="flex flex-col items-center gap-2 opacity-40 animate-bounce pt-4">
+                        <span class="text-[8px] uppercase tracking-[0.3em] font-bold text-[#FFCD57]">Scroll to
+                            Explore</span>
+                        <i data-lucide="chevron-down" class="w-3 h-3 text-[#FFCD57]"></i>
+                    </div>
+                </div>
+                <canvas id="exploded-canvas"></canvas>
+                <div class="canvas-overlay pointer-events-none"></div>
+
+                <!-- Animated Indicators -->
+                <div id="canvas-labels" class="absolute inset-0 z-20 pointer-events-none overflow-hidden">
+                    <div class="label absolute opacity-0 transition-all duration-700 translate-y-4"
+                        style="top: 45%; left: 25%;">
+                        <div class="flex items-center gap-4">
+                            <div class="h-px w-24 bg-gradient-to-r from-[#FFCD57] to-transparent"></div>
+                            <div class="bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                                <span
+                                    class="block text-[10px] uppercase tracking-widest text-[#FFCD57] font-black mb-1">Architecture</span>
+                                <span class="text-xl font-extrabold text-foreground">Full Stack Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="label absolute opacity-0 transition-all duration-700 translate-y-4"
+                        style="top: 65%; left: 65%;">
+                        <div class="flex items-center gap-4 flex-row-reverse">
+                            <div class="h-px w-24 bg-gradient-to-l from-[#FFCD57] to-transparent"></div>
+                            <div class="bg-black/40 backdrop-blur-md p-4 rounded-2xl border border-white/10">
+                                <span
+                                    class="block text-[10px] uppercase tracking-widest text-[#FFCD57] font-black mb-1">Performance</span>
+                                <span class="text-xl font-extrabold text-foreground">Hardware Acceleration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: NETWORK INFRASTRUCTURE (STACKED CARDS) -->
+        <section id="section-3" class="relative bg-background py-32 h-auto block">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Header -->
+                <div class="mb-24 space-y-4 text-center animate-on-scroll">
+                    <div
+                        class="inline-flex items-center gap-2 text-[#FFCD57] text-xs uppercase tracking-[0.3em] font-bold">
+                        <i data-lucide="network" class="w-4 h-4"></i>
+                        <span>Core Infrastructure</span>
+                    </div>
+                    <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter text-foreground">Our Technology
+                        Stack
+                    </h2>
+                    <p class="text-secondary max-w-2xl mx-auto">We deploy industry-leading hardware and certified
+                        engineering to build networks that never fail.</p>
+                </div>
+
+                <!-- Cards Container -->
+                <div class="space-y-20">
+                    <!-- Card 1 -->
+                    <div
+                        class="card-stack-item glass-panel rounded-[40px] p-12 md:p-16 flex flex-col md:flex-row gap-12 items-center min-h-[60vh] border-white/10 shadow-3xl">
+                        <div class="flex-1 space-y-8">
+                            <div
+                                class="h-16 w-16 bg-[#FFCD57]/10 rounded-2xl flex items-center justify-center border border-[#FFCD57]/20">
+                                <i data-lucide="cable" class="w-8 h-8 text-[#FFCD57]"></i>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl font-black text-foreground leading-tight">Structured
+                                <br><span class="text-foreground/40">Cabling Systems</span>
+                            </h3>
+                            <p class="text-lg text-secondary leading-relaxed font-medium">Standardized architecture
+                                that supports multiple hardware uses. We provide certified CAT6, CAT6A, and Fiber Optic
+                                installations.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">Data
+                                    Room Setup</span>
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">Fiber
+                                    Splicing</span>
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">Fluke
+                                    Testing</span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 w-full max-w-md aspect-square bg-gradient-to-br from-[#FFCD57]/10 to-transparent rounded-3xl border border-white/5 flex items-center justify-center relative overflow-hidden group">
+                            <i data-lucide="network"
+                                class="w-48 h-48 text-foreground/5 group-hover:scale-110 transition-transform duration-700"></i>
+                            <div
+                                class="absolute bottom-8 left-8 right-8 p-6 bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl">
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="text-xs font-bold text-foreground/60 uppercase tracking-widest">Deployment
+                                        Status</span>
+                                    <span class="text-xs font-black text-[#FFCD57]">CERTIFIED</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="card-stack-item glass-panel rounded-[40px] p-12 md:p-16 flex flex-col md:flex-row-reverse gap-12 items-center min-h-[60vh] border-white/10 shadow-3xl">
+                        <div class="flex-1 space-y-8">
+                            <div
+                                class="h-16 w-16 bg-[#3A428C]/10 rounded-2xl flex items-center justify-center border border-[#3A428C]/20 text-[#3A428C]">
+                                <i data-lucide="server" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl font-black text-foreground leading-tight">Switching &
+                                <br><span class="text-foreground/40">Routing Core</span>
+                            </h3>
+                            <p class="text-lg text-secondary leading-relaxed font-medium">Enterprise-grade network
+                                management. We configure L2/L3 switches, firewalls, and core routers for maximum
+                                throughput.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">VLAN
+                                    Config</span>
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">HA
+                                    Clusters</span>
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">SD-WAN</span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 w-full max-w-md aspect-square bg-gradient-to-br from-[#3A428C]/10 to-transparent rounded-3xl border border-white/5 flex items-center justify-center relative overflow-hidden group">
+                            <i data-lucide="zap"
+                                class="w-48 h-48 text-foreground/5 group-hover:scale-110 transition-transform duration-700"></i>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="card-stack-item glass-panel rounded-[40px] p-12 md:p-16 flex flex-col md:flex-row gap-12 items-center min-h-[60vh] border-white/10 shadow-3xl mb-0">
+                        <div class="flex-1 space-y-8">
+                            <div
+                                class="h-16 w-16 bg-[#ff5f57]/10 rounded-2xl flex items-center justify-center border border-[#ff5f57]/20 text-[#ff5f57]">
+                                <i data-lucide="shield-check" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-4xl md:text-5xl font-black text-foreground leading-tight">Network <br><span
+                                    class="text-foreground/40">Cybersecurity</span></h3>
+                            <p class="text-lg text-secondary leading-relaxed font-medium">Protecting your perimeter
+                                with next-gen firewalls, endpoint security, and active threat monitoring systems.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">IPDS
+                                    / IPS</span>
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">VPN
+                                    Tunnels</span>
+                                <span
+                                    class="px-4 py-2 rounded-full border border-white/5 bg-white/5 text-xs font-bold text-foreground/60">DDoS
+                                    Protection</span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 w-full max-w-md aspect-square bg-gradient-to-br from-[#ff5f57]/10 to-transparent rounded-3xl border border-white/5 flex items-center justify-center relative overflow-hidden group">
+                            <i data-lucide="lock"
+                                class="w-48 h-48 text-foreground/5 group-hover:scale-110 transition-transform duration-700"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CLOUD SOLUTIONS -->
+        <section id="section-4"
+            class="min-h-screen w-full relative flex items-center bg-background py-24 overflow-hidden">
+            <!-- Background Glow -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#3A428C]/5 rounded-full blur-[150px] pointer-events-none">
+            </div>
+
+
+            <div class="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-20 items-center relative z-10">
+
+                <div class="space-y-10 animate-on-scroll">
+                    <div
+                        class="inline-flex items-center gap-2 text-[#FFCD57] text-xs uppercase tracking-[0.4em] font-black">
+                        <i data-lucide="cloud" class="w-4 h-4"></i>
+                        <span>Cloud Architecture</span>
+                    </div>
+                    <h2 class="text-5xl md:text-8xl font-extrabold tracking-tighter text-foreground leading-[0.85]">
+                        Scalable <br>
+                        <span class="text-foreground/30 italic font-medium">Digital Skies.</span>
+                    </h2>
+                    <p class="text-xl text-secondary leading-relaxed max-w-xl font-medium">
+                        Move beyond local constraints. We engineer seamless cloud transitions and hybrid environments
+                        that ensure your data is always accessible, secure, and ready to scale.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+                        <div
+                            class="group p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-[#FFCD57]/30 transition-all">
+                            <i data-lucide="mail" class="w-8 h-8 text-[#FFCD57] mb-4"></i>
+                            <h4 class="text-foreground font-bold text-lg mb-2">Office 365</h4>
+                            <p class="text-sm text-neutral-500">Enterprise email & productivity suite migration.</p>
+                        </div>
+                        <div
+                            class="group p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-[#FFCD57]/30 transition-all">
+                            <i data-lucide="database" class="w-8 h-8 text-[#FFCD57] mb-4"></i>
+                            <h4 class="text-foreground font-bold text-lg mb-2">Cloud Storage</h4>
+                            <p class="text-sm text-neutral-500">Secure, encrypted off-site data archival.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative animate-on-scroll delay-100">
+                    <div class="relative z-10 space-y-4">
+                        <!-- Cloud Service Spectrum Box -->
+                        <div class="glass-panel p-10 rounded-[2.5rem] border-white/10 shadow-3xl">
+                            <h3 class="text-2xl font-black text-foreground mb-8 border-b border-white/5 pb-6">Cloud
+                                Service
+                                Spectrum</h3>
+                            <div class="space-y-8">
+                                <div class="flex gap-6 group">
+                                    <div
+                                        class="h-12 w-12 rounded-2xl bg-[#FFCD57]/10 flex items-center justify-center text-[#FFCD57] group-hover:bg-[#FFCD57] group-hover:text-black transition-all duration-500">
+                                        <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-foreground font-black uppercase tracking-widest text-xs mb-1">
+                                            Backup
+                                            & Disaster Recovery</h4>
+                                        <p class="text-secondary text-sm">Automated snapshots and rapid failover
+                                            protocols.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 group">
+                                    <div
+                                        class="h-12 w-12 rounded-2xl bg-[#FFCD57]/10 flex items-center justify-center text-[#FFCD57] group-hover:bg-[#FFCD57] group-hover:text-black transition-all duration-500">
+                                        <i data-lucide="eye" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-foreground font-black uppercase tracking-widest text-xs mb-1">
+                                            Ongoing
+                                            Monitoring</h4>
+                                        <p class="text-secondary text-sm">24/7 endpoint management and resource
+                                            optimization.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-6 group">
+                                    <div
+                                        class="h-12 w-12 rounded-2xl bg-[#FFCD57]/10 flex items-center justify-center text-[#FFCD57] group-hover:bg-[#FFCD57] group-hover:text-black transition-all duration-500">
+                                        <i data-lucide="share-2" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-foreground font-black uppercase tracking-widest text-xs mb-1">
+                                            Public
+                                            & Hybrid Cloud</h4>
+                                        <p class="text-secondary text-sm">Deployment across AWS, Azure, and private
+                                            clusters.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Element -->
+                    <div
+                        class="absolute -bottom-10 -left-10 w-32 h-32 border-l border-b border-[#FFCD57]/20 rounded-bl-3xl">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 5: HARDWARE & AMC (BENTO GRID) -->
+        <section id="section-5" class="min-h-screen w-full relative flex items-center bg-background py-24">
+            <div class="max-w-7xl mx-auto px-6 w-full">
+                <!-- Header -->
+                <div class="mb-16 space-y-4 animate-on-scroll">
+                    <div
+                        class="inline-flex items-center gap-2 text-[#FFCD57] text-xs uppercase tracking-[0.4em] font-black">
+                        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        <span>Procurement & Support</span>
+                    </div>
+                    <h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter text-foreground">Full Spectrum
+                        <br><span class="text-foreground/40">Hardware Logistics.</span>
+                    </h2>
+                </div>
+
+                <!-- Bento Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 h-auto md:h-[800px]">
+
+                    <!-- Main Featured Card (High-End Sales) -->
+                    <div
+                        class="md:col-span-2 md:row-span-2 glass-panel rounded-[2.5rem] p-12 flex flex-col justify-between overflow-hidden relative group animate-on-scroll">
+                        <div
+                            class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-[#FFCD57]/10 rounded-full blur-[80px] group-hover:bg-[#FFCD57]/20 transition-all duration-700">
+                        </div>
+                        <div class="relative z-10 space-y-8">
+                            <div class="h-16 w-16 bg-[#FFCD57] text-black rounded-2xl flex items-center justify-center">
+                                <i data-lucide="monitor" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-4xl font-black text-foreground mb-4">Enterprise Workstations</h3>
+                                <p class="text-secondary text-lg leading-relaxed max-w-sm">Direct procurement of
+                                    high-performance computing systems tailored for designers, engineers, and financial
+                                    analysts.</p>
+                            </div>
+                            <div class="flex flex-col gap-4">
+                                <div class="flex items-center gap-3 text-foreground/80 font-bold">
+                                    <div class="h-1.5 w-1.5 rounded-full bg-[#FFCD57]"></div>
+                                    <span>Authorized Partner: HP, Dell, Lenovo</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-foreground/80 font-bold">
+                                    <div class="h-1.5 w-1.5 rounded-full bg-[#FFCD57]"></div>
+                                    <span>Custom OS Imaging & Deployment</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative z-10 pt-8">
+                            <button
+                                class="text-sm font-black text-[#FFCD57] uppercase tracking-widest flex items-center gap-2 group/btn">
+                                Explore Inventory
+                                <i data-lucide="arrow-right"
+                                    class="w-4 h-4 group-hover/btn:translate-x-2 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Server Card -->
+                    <div
+                        class="md:col-span-2 md:row-span-1 glass-panel rounded-[2.5rem] p-10 flex flex-col md:flex-row gap-8 items-center bg-gradient-to-br from-blue-900/10 to-transparent animate-on-scroll delay-100">
+                        <div class="flex-1 space-y-4 text-center md:text-left">
+                            <div
+                                class="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest mb-2">
+                                High Density</div>
+                            <h4 class="text-3xl font-black text-foreground">Rack & Blade Servers</h4>
+                            <p class="text-sm text-neutral-500">Optimized compute for your data center.</p>
+                        </div>
+                        <div class="flex-1 flex justify-center">
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full"></div>
+                                <i data-lucide="server" class="w-24 h-24 text-blue-500/40 relative z-10"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AMC / Service Card -->
+                    <div
+                        class="md:col-span-1 md:row-span-1 glass-panel rounded-[2.5rem] p-8 flex flex-col justify-between hover:bg-[#FFCD57]/5 transition-colors animate-on-scroll delay-200">
+                        <div class="space-y-4">
+                            <i data-lucide="shield-check" class="w-10 h-10 text-[#FFCD57]"></i>
+                            <h4 class="text-xl font-bold text-foreground">IT AMC</h4>
+                            <p class="text-xs text-neutral-500">24/7 Priority Support & Preventive Maintenance.</p>
+                        </div>
+                        <div class="text-[10px] font-black text-[#FFCD57] tracking-widest uppercase">Response <
+                                4Hrs</div>
+                        </div>
+
+                        <!-- Logistics Card -->
+                        <div
+                            class="md:col-span-1 md:row-span-1 glass-panel rounded-[2.5rem] p-8 flex flex-col justify-between hover:bg-white/5 transition-colors animate-on-scroll delay-300">
+                            <div class="space-y-4">
+                                <i data-lucide="truck" class="w-10 h-10 text-foreground/40"></i>
+                                <h4 class="text-xl font-bold text-foreground">Global Logistics</h4>
+                                <p class="text-xs text-neutral-500">Secure delivery & deployment across India.</p>
+                            </div>
+                            <div class="text-[10px] font-black text-foreground/20 tracking-widest uppercase">Tier 1
+                                Cities
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+
+        <!-- SECTION 6: KNOWLEDGE BASE (SEO HUB) -->
+        <section id="section-6"
+            class="h-screen w-full relative snap-center flex items-center justify-center bg-background overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-center gap-12">
+                <div class="text-center space-y-4 animate-on-scroll">
+                    <div
+                        class="inline-flex items-center gap-2 text-[#FFCD57] text-xs uppercase tracking-[0.3em] font-bold">
+                        <i data-lucide="book-open" class="w-4 h-4"></i>
+                        <span>Knowledge Base</span>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-foreground">
+                        Enterprise IT Insights
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full animate-on-scroll delay-100">
+                    <div
+                        class="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-[#FFCD57]/30 transition-all group">
+                        <h4 class="text-foreground font-bold mb-3 group-hover:text-[#FFCD57]">Network Infrastructure?
+                        </h4>
+                        <p class="text-xs text-secondary leading-relaxed">Hardware & software resources that enable
+                            connectivity, communication, and management within an enterprise network.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-[#FFCD57]/30 transition-all group">
+                        <h4 class="text-foreground font-bold mb-3 group-hover:text-[#FFCD57]">Structured Cabling?</h4>
+                        <p class="text-xs text-secondary leading-relaxed">A standardized cabling system that supports
+                            multiple hardware uses and forms the backbone of IT infrastructure.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-[#FFCD57]/30 transition-all group">
+                        <h4 class="text-foreground font-bold mb-3 group-hover:text-[#FFCD57]">Cloud Migration?</h4>
+                        <p class="text-xs text-secondary leading-relaxed">The process of moving digital assets,
+                            databases, and workloads from on-premise systems to cloud infrastructure.</p>
+                    </div>
+                    <div
+                        class="p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-[#FFCD57]/30 transition-all group">
+                        <h4 class="text-foreground font-bold mb-3 group-hover:text-[#FFCD57]">IT AMC?</h4>
+                        <p class="text-xs text-secondary leading-relaxed">Ensures proactive system monitoring,
+                            preventive maintenance, and quick resolution to reduce disruptions.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="max-w-4xl w-full p-8 rounded-3xl bg-gradient-to-br from-[#3A428C]/10 to-transparent border border-white/5 animate-on-scroll delay-200">
+                    <h4 class="text-[#FFCD57] font-bold mb-4 flex items-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4"></i> Why Businesses Need IT Consulting
+                    </h4>
+                    <p class="text-sm text-neutral-300 leading-relaxed">
+                        IT consulting helps businesses identify infrastructure gaps, reduce operational risks, plan
+                        scalable architecture, and optimize technology investments. At BG Systems, we align technology
+                        with your business strategy to drive digital transformation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: FOOTER & CTA -->
+        <section id="section-7" class="w-full relative snap-start bg-background pt-20">
+            <div class="max-w-7xl mx-auto px-6 mb-20 text-center animate-on-scroll">
+                <h2 class="text-6xl md:text-9xl font-extrabold tracking-tighter text-foreground mb-8">
+                    Ready to Scale?
+                </h2>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                    <button class="shiny-cta h-16 px-12" onclick="scrollToIndex(7)">
+                        <span>Schedule a Consultation</span>
+                    </button>
+                    <div class="flex flex-col items-start gap-2">
+                        <a href="tel:+919843099285"
+                            class="text-3xl font-bold text-foreground hover:text-[#FFCD57] transition-colors tracking-tighter">
+                            +91 98430 99285
+                        </a>
+                        <a href="tel:+919080700172"
+                            class="text-xl font-medium text-foreground/60 hover:text-[#FFCD57] transition-colors tracking-tighter">
+                            +91 90807 00172
+                        </a>
+                    </div>
+                </div>
+                <p class="mt-12 text-neutral-500 uppercase tracking-[0.4em] text-[10px] font-bold">📍 Chennai, India •
+                    SEO Optimised Design • February 19, 2026</p>
+            </div>
+
+            <!-- Footer Component -->
+            <footer class="w-full sm:px-6 md:px-10 max-w-7xl mr-auto ml-auto pb-10 pl-4 pr-4">
+                <div
+                    class="relative overflow-hidden bg-neutral-900/50 backdrop-blur-3xl rounded-[3rem] border border-white/10">
+                    <div class="relative z-10 sm:p-12 md:p-16 pt-12 pr-8 pb-8 pl-8">
+                        <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+                            <div class="lg:col-span-2">
+                                <div class="flex items-center gap-4 mb-8">
+                                    <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Systems"
+                                        class="h-10 w-auto dark:invert-0 light:invert transition-all">
+                                    <div class="h-6 w-px bg-foreground/20"></div>
+                                    <h3 class="text-xl font-bold text-foreground tracking-tight uppercase">Smart IT
+                                        Solutions
+                                    </h3>
+                                </div>
+                                <p class="text-foreground/60 text-lg leading-relaxed max-w-xl mb-8">
+                                    BG Systems is a Chennai-based IT solutions provider delivering end-to-end
+                                    infrastructure, networking, cloud, and enterprise IT services to businesses across
+                                    India.
+                                </p>
+                                <div class="flex gap-4">
+                                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-1">
+                                        <span
+                                            class="text-[10px] font-black uppercase tracking-[0.2em] text-[#FFCD57]">Headquarters</span>
+                                        <span class="text-foreground font-bold text-sm tracking-wide">Chennai,
+                                            India</span>
+                                    </div>
+                                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-1">
+                                        <span
+                                            class="text-[10px] font-black uppercase tracking-[0.2em] text-[#FFCD57]">Availability</span>
+                                        <span class="text-foreground font-bold text-sm tracking-wide">24/7 AMC
+                                            Support</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="contact" class="lg:col-span-2">
+                                <div class="bg-white/5 border border-white/10 rounded-[2rem] p-8 shadow-inner">
+                                    <h4 class="text-foreground font-bold text-xl mb-6 tracking-tight">Rapid Response
+                                        Inquiry
+                                    </h4>
+                                    <form id="contact-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="sm:col-span-1">
+                                            <label for="email"
+                                                class="block text-[10px] font-black uppercase tracking-widest text-[#FFCD57] mb-2">Business
+                                                Email</label>
+                                            <input id="email" name="email" type="email" required
+                                                placeholder="name@company.com"
+                                                class="w-full outline-none focus:ring-2 focus:ring-[#FFCD57] transition text-sm text-foreground bg-black/40 dark:bg-black/40 light:bg-slate-50 border-white/10 dark:border-white/10 light:border-black/10 border rounded-xl py-3 px-4">
+                                        </div>
+                                        <div class="sm:col-span-1">
+                                            <label for="service"
+                                                class="block text-[10px] font-black uppercase tracking-widest text-[#FFCD57] mb-2">Service
+                                                Needed</label>
+                                            <select id="service" name="service"
+                                                class="w-full appearance-none outline-none focus:ring-2 focus:ring-[#FFCD57] transition text-sm text-foreground bg-black/40 dark:bg-black/40 light:bg-slate-50 border-white/10 dark:border-white/10 light:border-black/10 border rounded-xl py-3 px-4">
+                                                <option class="dark:bg-neutral-900 light:bg-white" value="infra">
+                                                    Enterprise Infrastructure
+                                                </option>
+                                                <option class="dark:bg-neutral-900 light:bg-white" value="cloud">Cloud
+                                                    Migration</option>
+                                                <option class="dark:bg-neutral-900 light:bg-white" value="amc">IT AMC
+                                                    Services</option>
+                                                <option class="dark:bg-neutral-900 light:bg-white" value="consulting">IT
+                                                    Consulting</option>
+                                            </select>
+                                        </div>
+                                        <div class="sm:col-span-2">
+                                            <label for="message"
+                                                class="block text-[10px] font-black uppercase tracking-widest text-[#FFCD57] mb-2">Project
+                                                Brief</label>
+                                            <textarea id="message" name="message" rows="3"
+                                                placeholder="Describe your networking or cloud requirements..."
+                                                class="w-full outline-none focus:ring-2 focus:ring-[#FFCD57] transition text-sm text-foreground bg-black/40 dark:bg-black/40 light:bg-slate-50 border-white/10 dark:border-white/10 light:border-black/10 border rounded-xl py-3 px-4"></textarea>
+                                        </div>
+                                        <div class="sm:col-span-2 flex items-center justify-end mt-2">
+                                            <button type="submit"
+                                                class="bg-[#FFCD57] text-black font-black uppercase tracking-widest text-xs py-4 px-10 rounded-xl hover:scale-105 transition-transform flex items-center gap-3">
+                                                <i data-lucide="send" class="w-4 h-4"></i>
+                                                Send Inquiry
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 pt-12 pb-12 border-b border-white/10">
+                            <div>
+                                <h4 class="text-[#FFCD57] text-[10px] font-black uppercase tracking-[0.3em] mb-4">Core
+                                    Expertise</h4>
+                                <ul class="space-y-3 text-sm font-medium">
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">Network
+                                            Design</a></li>
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">Structured
+                                            Cabling</a></li>
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">Server
+                                            Deployment</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-[#FFCD57] text-[10px] font-black uppercase tracking-[0.3em] mb-4">Cloud
+                                    Services</h4>
+                                <ul class="space-y-3 text-sm font-medium">
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">AWS/Azure
+                                            Migration</a></li>
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">Microsoft
+                                            365
+                                            Setup</a></li>
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">Cloud
+                                            Security</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-[#FFCD57] text-[10px] font-black uppercase tracking-[0.3em] mb-4">
+                                    Company</h4>
+                                <ul class="space-y-3 text-sm font-medium">
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">About BG
+                                            Systems</a></li>
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">AMC
+                                            Solutions</a></li>
+                                    <li><a href="#" class="text-secondary hover:text-foreground transition">Contact
+                                            Hub</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-[#FFCD57] text-[10px] font-black uppercase tracking-[0.3em] mb-4">Office
+                                    Hub</h4>
+                                <p class="text-foreground font-bold text-sm tracking-wide mb-2 italic">📍 Chennai, India
+                                </p>
+                                <p class="text-neutral-500 text-xs leading-relaxed">Serving enterprise businesses across
+                                    the Indian subcontinent.</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <p class="text-neutral-500 text-xs font-bold tracking-widest uppercase">© <span
+                                    id="year">2026</span> BG Systems. Built for the Future.</p>
+                            <div
+                                class="flex items-center gap-8 text-neutral-500 text-[10px] font-black uppercase tracking-widest">
+                                <a href="#" class="hover:text-foreground transition">Privacy Policy</a>
+                                <a href="#" class="hover:text-foreground transition">Terms of Service</a>
+                                <a href="#section-0" onclick="scrollToIndex(0)"
+                                    class="text-[#FFCD57] hover:scale-110 transition-transform">
+                                    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons({
+            attrs: {
+                'stroke-width': 1.5
+            }
+        });
+
+        // Set Video Playback Rate to 0.5x
+        window.addEventListener('load', () => {
+            const video = document.getElementById('hero-video');
+            if (video) {
+                video.playbackRate = 0.75;
+            }
+        });
+
+        // Scroll Animation Logic
+        (function () {
+            if (!window.__inViewIO) {
+                window.__inViewIO = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("animate");
+                        }
+                    });
+                }, { threshold: 0.1 });
+            }
+
+            window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+                document.querySelectorAll(selector).forEach((el) => {
+                    window.__inViewIO.observe(el);
+                });
+            };
+
+            document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+        })();
+
+        // Scroll Navigation and Dot State
+        const scrollContainer = document.getElementById('main-scroll');
+        const dots = document.querySelectorAll('.nav-dot');
+
+        function scrollToIndex(index) {
+            const section = document.getElementById(`section-${index}`);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const index = parseInt(id.split('-')[1]);
+
+                    dots.forEach((dot, i) => {
+                        if (i === index) {
+                            dot.classList.add('active');
+                            dot.classList.remove('bg-white/20');
+                        } else {
+                            dot.classList.remove('active');
+                            dot.classList.add('bg-white/20');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Mouse Parallax for Hero
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 10;
+            const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+            const heroContent = document.querySelector('#section-0 .max-w-7xl');
+            if (heroContent) {
+                heroContent.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        });
+
+        // EXPLODED VIEW CANVAS LOGIC
+        const canvas = document.getElementById('exploded-canvas');
+        const context = canvas.getContext('2d');
+        const parallaxSection = document.getElementById('section-2');
+        const labels = document.querySelectorAll('.label');
+
+        const frameCount = 144;
+        const currentFrame = index => (
+            `ezgif-frame-${index.toString().padStart(3, '0')}.jpg`
+        );
+
+        const images = [];
+        const frames = {
+            frame: 0
+        };
+
+        // Preload images
+        for (let i = 1; i <= frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            images.push(img);
+        }
+
+        // Set canvas dimensions
+        function updateCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            renderCanvas();
+        }
+
+        function renderCanvas() {
+            const activeImage = images[frames.frame];
+            if (!activeImage || !activeImage.complete) return;
+
+            const canvasRatio = canvas.width / canvas.height;
+            const imageRatio = activeImage.width / activeImage.height;
+            let drawWidth, drawHeight, x, y;
+
+            if (canvasRatio > imageRatio) {
+                drawWidth = canvas.height * imageRatio;
+                drawHeight = canvas.height;
+                x = (canvas.width - drawWidth) / 2;
+                y = 0;
+            } else {
+                drawWidth = canvas.width;
+                drawHeight = canvas.width / imageRatio;
+                x = 0;
+                y = (canvas.height - drawHeight) / 2;
+            }
+
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.drawImage(activeImage, x, y, drawWidth, drawHeight);
+        }
+
+        // Parallax scroll handler
+        scrollContainer.addEventListener('scroll', () => {
+            if (!parallaxSection) return;
+
+            const sectionRect = parallaxSection.getBoundingClientRect();
+            const scrollRange = parallaxSection.offsetHeight - window.innerHeight;
+
+            // scrollPosition is how much of the section has been scrolled past the top
+            const scrollPosition = -sectionRect.top;
+
+            if (scrollPosition >= 0 && scrollPosition <= scrollRange) {
+                const fraction = Math.max(0, Math.min(1, scrollPosition / scrollRange));
+                const frameIndex = Math.min(
+                    frameCount - 1,
+                    Math.floor(fraction * frameCount)
+                );
+
+                frames.frame = frameIndex;
+                requestAnimationFrame(renderCanvas);
+
+                // Animated entrance for labels (adjusted for faster scroll)
+                if (fraction > 0.1 && fraction < 0.45) {
+                    labels[0].style.opacity = '1';
+                    labels[0].style.transform = 'translateY(0)';
+                } else {
+                    labels[0].style.opacity = '0';
+                    labels[0].style.transform = 'translateY(1rem)';
+                }
+
+                if (fraction > 0.5 && fraction < 0.85) {
+                    labels[1].style.opacity = '1';
+                    labels[1].style.transform = 'translateY(0)';
+                } else {
+                    labels[1].style.opacity = '0';
+                    labels[1].style.transform = 'translateY(1rem)';
+                }
+            }
+        });
+
+        // Preload images and trigger initial render
+        let loadedCount = 0;
+        images.forEach((img, i) => {
+            img.onload = () => {
+                loadedCount++;
+                if (i === 0) renderCanvas();
+            };
+        });
+
+        window.addEventListener('resize', updateCanvasSize);
+        updateCanvasSize();
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            const darkIcon = document.querySelector('.dark-icon');
+            const lightIcon = document.querySelector('.light-icon');
+
+            if (html.classList.contains('light')) {
+                html.classList.remove('light');
+                localStorage.setItem('theme', 'dark');
+                darkIcon.classList.remove('hidden');
+                lightIcon.classList.add('hidden');
+            } else {
+                html.classList.add('light');
+                localStorage.setItem('theme', 'light');
+                darkIcon.classList.add('hidden');
+                lightIcon.classList.remove('hidden');
+            }
+        }
+
+        // Initialize Theme
+        if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.add('light');
+            document.querySelector('.dark-icon').classList.add('hidden');
+            document.querySelector('.light-icon').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+
+</html>```
