@@ -476,6 +476,11 @@
         .animate-drift {
             animation: drift 8s ease-in-out infinite;
         }
+
+        /* Logo Color Override */
+        .logo-white {
+            filter: brightness(0) invert(1) !important;
+        }
     </style>
 </head>
 
@@ -489,7 +494,7 @@
         <div class="pointer-events-auto">
             <div class="flex items-center justify-center p-2 group cursor-pointer transition">
                 <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Systems"
-                    class="h-14 md:h-24 w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-500">
+                    class="h-14 md:h-24 w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-500 logo-white">
             </div>
         </div>
         <nav
@@ -2106,7 +2111,7 @@
                             <div class="lg:col-span-2">
                                 <div class="flex items-center gap-4 mb-8">
                                     <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Systems"
-                                        class="h-10 w-auto transition-all">
+                                        class="h-10 w-auto transition-all logo-white">
                                     <div class="h-6 w-px bg-foreground/20"></div>
                                     <h3 class="text-xl font-bold text-foreground tracking-tight uppercase">Smart IT
                                         Solutions
@@ -2552,7 +2557,8 @@
                 <div class="flex items-center gap-4">
                     <div
                         class="h-12 w-12 bg-white rounded-xl flex items-center justify-center p-2 shrink-0 overflow-hidden">
-                        <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Logo" class="w-full h-auto">
+                        <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Logo"
+                            class="w-full h-auto logo-white">
                     </div>
                     <div>
                         <h4 class="font-black text-xl text-white tracking-tighter uppercase italic text-sm">BG SYSTEMS
@@ -2706,13 +2712,70 @@
                     if (currentStep === steps.length - 1) {
                         chatInput.disabled = true;
                         chatInput.placeholder = "Conversation ended";
-                        console.log('Lead Captured:', userData);
+
+                        // Push to Google Sheets (Replace URL after creating the Web App)
+                        const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwg2A0iDuVj1YkORs5ckL7_Yz7go9YThLTbBpbXp6muhxd2LOPBGliDd8MQv2OCMY5p-g/exec';
+
+                        if (GOOGLE_SHEETS_URL) {
+                            fetch(GOOGLE_SHEETS_URL, {
+                                method: 'POST',
+                                mode: 'no-cors', // Bypasses CORS for direct posting
+                                cache: 'no-cache',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    timestamp: new Date().toLocaleString(),
+                                    source: 'Chatbot',
+                                    ...userData
+                                })
+                            }).then(() => console.log('Lead synced to Sheets'))
+                                .catch(err => console.error('Sync failed:', err));
+                        }
                     }
                 }, 800);
             });
 
-            // Re-initialize icons to catch the chatbot elements
+            // Re-initialize icons
             lucide.createIcons();
+
+            // Contact Form Integration
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const formData = new FormData(contactForm);
+                    const data = {
+                        timestamp: new Date().toLocaleString(),
+                        source: 'Contact Form',
+                        name: formData.get('email').split('@')[0], // Extract name from email as placeholder
+                        email: formData.get('email'),
+                        message: `Service: ${formData.get('service')}\n\nBrief: ${formData.get('message')}`
+                    };
+
+                    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwg2A0iDuVj1YkORs5ckL7_Yz7go9YThLTbBpbXp6muhxd2LOPBGliDd8MQv2OCMY5p-g/exec';
+
+                    if (GOOGLE_SHEETS_URL) {
+                        try {
+                            await fetch(GOOGLE_SHEETS_URL, {
+                                method: 'POST',
+                                mode: 'no-cors',
+                                body: JSON.stringify(data)
+                            });
+                            alert('Thank you! Your inquiry has been sent.');
+                        } catch (err) {
+                            console.error('Error sending inquiry:', err);
+                            alert('Something went wrong. Please try again or call us.');
+                        }
+                    } else {
+                        console.log('Form data ready but URL not set:', data);
+                        alert('Your message was captured! (Sync pending URL setup)');
+                    }
+
+                    contactForm.reset();
+                });
+            }
         });
     </script>
 
