@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="BG Systems_CREYT_Logo_Final_Transparent (2).png">
     <title>BG Systems | IT Solutions Company in Chennai | Network, Cloud & IT Support</title>
     <meta name="description"
         content="BG Systems is a leading IT solutions company in Chennai offering network infrastructure, cloud migration, computer sales & IT AMC services. Secure and scalable business IT solutions">
@@ -81,17 +82,6 @@
             --nav-bg: rgba(0, 0, 0, 0.4);
         }
 
-        .light {
-            --bg: #F8FAFC;
-            --text: #0F172A;
-            --secondary-text: #475569;
-            --glass-bg: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(0, 0, 0, 0.05);
-            --brand-yellow-muted: rgba(255, 215, 0, 0.4);
-            --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
-            --nav-bg: rgba(255, 255, 255, 0.8);
-        }
-
         /* Base Settings */
         body {
             background-color: var(--bg);
@@ -99,7 +89,6 @@
             overflow: hidden;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         body::-webkit-scrollbar {
@@ -500,83 +489,68 @@
         <div class="pointer-events-auto">
             <div class="flex items-center justify-center p-2 group cursor-pointer transition">
                 <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Systems"
-                    class="h-14 md:h-24 w-auto dark:drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] light:drop-shadow-[0_0_10px_rgba(0,0,0,0.1)] light:invert hover:scale-105 transition-all duration-500">
+                    class="h-14 md:h-24 w-auto drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-500">
             </div>
         </div>
         <nav
-            class="pointer-events-auto hidden lg:flex items-center gap-6 bg-black/40 dark:bg-black/40 light:bg-white/80 backdrop-blur-xl px-8 py-3 rounded-full border border-white/5 dark:border-white/5 light:border-black/5 shadow-2xl">
+            class="pointer-events-auto hidden lg:flex items-center gap-6 bg-black/40 backdrop-blur-xl px-8 py-3 rounded-full border border-white/5 shadow-2xl">
             <a href="#section-0" onclick="scrollToIndex(0)"
-                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Home</a>
+                class="text-xs font-semibold text-white/60 hover:text-[#FFD700] transition-colors uppercase tracking-[0.2em]">Home</a>
             <a href="#section-1" onclick="scrollToIndex(1)"
-                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">About</a>
+                class="text-xs font-semibold text-white/60 hover:text-[#FFD700] transition-colors uppercase tracking-[0.2em]">About</a>
             <a href="#section-3" onclick="scrollToIndex(3)"
-                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Services</a>
-            <a href="#section-8" onclick="scrollToIndex(8)"
-                class="text-xs font-semibold text-[#FFD700] dark:text-[#FFD700] transition-colors uppercase tracking-[0.2em]">Solutions</a>
-            <a href="#section-11" onclick="scrollToIndex(11)"
-                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Products</a>
+                class="text-xs font-semibold text-white/60 hover:text-[#FFD700] transition-colors uppercase tracking-[0.2em]">Services</a>
             <a href="#section-6" onclick="scrollToIndex(6)"
-                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Knowledge</a>
-            <a href="#contact" onclick="scrollToIndex(7)"
-                class="text-xs font-semibold text-white/60 dark:text-white/60 light:text-slate-900 transition-colors uppercase tracking-[0.2em]">Contact</a>
+                class="text-xs font-semibold text-[#FFD700] hover:text-[#FFD700] transition-colors uppercase tracking-[0.2em]">Solutions</a>
+            <a href="#section-9" onclick="scrollToIndex(9)"
+                class="text-xs font-semibold text-white/60 hover:text-[#FFD700] transition-colors uppercase tracking-[0.2em]">Products</a>
+            <a href="#section-10" onclick="scrollToIndex(10)"
+                class="text-xs font-semibold text-white/60 hover:text-[#FFD700] transition-colors uppercase tracking-[0.2em]">Knowledge</a>
+            <a href="#section-11" onclick="scrollToIndex(11)"
+                class="text-xs font-semibold text-white/60 hover:text-[#FFD700] transition-colors uppercase tracking-[0.2em]">Contact</a>
         </nav>
         <div class="pointer-events-auto flex items-center gap-4">
-            <!-- Theme Toggle -->
-            <button onclick="toggleTheme()" id="theme-toggle"
-                class="h-10 w-10 rounded-full glass-panel flex items-center justify-center text-brand-yellow hover:scale-110 transition-all border border-white/10 dark:border-white/10 light:border-black/10">
-                <i data-lucide="moon" class="w-5 h-5 dark-icon"></i>
-                <i data-lucide="sun" class="w-5 h-5 light-icon hidden"></i>
-            </button>
-            <button
-                class="inline-flex overflow-hidden focus:outline-none focus:ring-2 focus:ring-brand-yellow focus:ring-offset-2 focus:ring-offset-slate-50 h-10 rounded-full pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative">
-                <span
-                    class="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFD700_0%,#3A428C_50%,#FFD700_100%)]"></span>
-                <span
-                    class="inline-flex cursor-pointer items-center justify-center transition-colors hover:bg-slate-950/80 text-[10px] font-bold uppercase tracking-widest text-white bg-slate-950 w-full h-full rounded-full px-6 backdrop-blur-3xl">
-                    Get a Quote
-                </span>
-            </button>
         </div>
     </header>
 
     <!-- Dynamic Side Navigation -->
-    <div class="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4 pointer-events-auto">
+    <div class="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 pointer-events-auto">
         <div onclick="scrollToIndex(0)"
-            class="nav-dot active w-1.5 h-4 bg-[#FFD700] rounded-full transition-all duration-500 cursor-pointer hover:scale-x-150"
+            class="nav-dot active w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="Home"></div>
         <div onclick="scrollToIndex(1)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
-            title="About"></div>
-        <div onclick="scrollToIndex(2)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="Vision"></div>
+        <div onclick="scrollToIndex(2)"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+            title="Exploded View"></div>
         <div onclick="scrollToIndex(3)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="Network"></div>
         <div onclick="scrollToIndex(4)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="Cloud"></div>
         <div onclick="scrollToIndex(5)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="Hardware"></div>
         <div onclick="scrollToIndex(6)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
-            title="Knowledge"></div>
-        <div onclick="scrollToIndex(7)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
-            title="Contact"></div>
-        <div onclick="scrollToIndex(8)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="UniSphere"></div>
-        <div onclick="scrollToIndex(9)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+        <div onclick="scrollToIndex(7)"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="ConvergePro"></div>
-        <div onclick="scrollToIndex(10)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+        <div onclick="scrollToIndex(8)"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="Smart Classroom"></div>
-        <div onclick="scrollToIndex(11)"
-            class="nav-dot w-1.5 h-4 bg-foreground/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+        <div onclick="scrollToIndex(9)"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
             title="Products"></div>
+        <div onclick="scrollToIndex(10)"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+            title="Knowledge"></div>
+        <div onclick="scrollToIndex(11)"
+            class="nav-dot w-[3px] h-8 bg-white/20 rounded-full transition-all duration-500 cursor-pointer hover:bg-[#FFD700]/60"
+            title="Contact"></div>
     </div>
 
     <!-- Main Scroll Container -->
@@ -622,7 +596,7 @@
                     </p>
 
                     <div class="flex flex-wrap gap-6 pt-6">
-                        <button class="shiny-cta focus:outline-none pulse-gold" onclick="scrollToIndex(7)">
+                        <button class="shiny-cta focus:outline-none pulse-gold" onclick="scrollToIndex(11)">
                             <span>Schedule a Consultation</span>
                         </button>
 
@@ -1203,8 +1177,8 @@
         </section>
 
 
-        <!-- SECTION 8: UNISPHERE™ -->
-        <section id="section-8" class="min-h-screen w-full relative bg-background py-28 overflow-hidden">
+        <!-- SECTION 6: UNISPHERE™ -->
+        <section id="section-6" class="min-h-screen w-full relative bg-background py-28 overflow-hidden">
             <div
                 class="absolute top-0 left-0 w-[700px] h-[700px] bg-[#3A428C]/5 rounded-full blur-[180px] pointer-events-none -translate-x-1/3">
             </div>
@@ -1235,22 +1209,28 @@
                                     ecosystem</strong>.</p>
                             <div class="flex flex-wrap gap-2">
                                 <span
-                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🏢
+                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-1.5"><i
+                                        data-lucide="building" class="w-3 h-3"></i>
                                     Corporate Offices</span>
                                 <span
-                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🏭
+                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-1.5"><i
+                                        data-lucide="factory" class="w-3 h-3"></i>
                                     Manufacturing Plants</span>
                                 <span
-                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🎓
+                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-1.5"><i
+                                        data-lucide="graduation-cap" class="w-3 h-3"></i>
                                     Campuses &amp; Institutions</span>
                                 <span
-                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🏥
+                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-1.5"><i
+                                        data-lucide="hospital" class="w-3 h-3"></i>
                                     Hospitals &amp; Hotels</span>
                                 <span
-                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🏘️
+                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-1.5"><i
+                                        data-lucide="home" class="w-3 h-3"></i>
                                     Gated Communities</span>
                                 <span
-                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🏪
+                                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-1.5"><i
+                                        data-lucide="store" class="w-3 h-3"></i>
                                     Retail &amp; Warehouses</span>
                             </div>
                         </div>
@@ -1423,13 +1403,20 @@
                                 Add-ons</span>
                         </div>
                         <h4 class="text-sm font-black text-foreground mb-2">Critical Components</h4>
-                        <ul class="text-xs text-foreground/60 space-y-1 leading-relaxed">
-                            <li>✔ Network NOC Dashboard</li>
-                            <li>✔ Structured Cabling &amp; Fiber</li>
-                            <li>✔ Server Rack, Power &amp; Cooling</li>
-                            <li>✔ UPS &amp; Power Backup</li>
-                            <li>✔ Cloud Integration (Azure/AWS)</li>
-                            <li>✔ Endpoint Security &amp; NAC</li>
+                        <ul class="text-xs text-foreground/60 space-y-2 leading-relaxed mt-2">
+                            <li class="flex items-center gap-2"><i data-lucide="circle-check"
+                                    class="w-3 h-3 text-[#FFD700]/50 shrink-0"></i> Network NOC Dashboard</li>
+                            <li class="flex items-center gap-2"><i data-lucide="circle-check"
+                                    class="w-3 h-3 text-[#FFD700]/50 shrink-0"></i> Structured Cabling &amp; Fiber</li>
+                            <li class="flex items-center gap-2"><i data-lucide="circle-check"
+                                    class="w-3 h-3 text-[#FFD700]/50 shrink-0"></i> Server Rack, Power &amp; Cooling
+                            </li>
+                            <li class="flex items-center gap-2"><i data-lucide="circle-check"
+                                    class="w-3 h-3 text-[#FFD700]/50 shrink-0"></i> UPS &amp; Power Backup</li>
+                            <li class="flex items-center gap-2"><i data-lucide="circle-check"
+                                    class="w-3 h-3 text-[#FFD700]/50 shrink-0"></i> Cloud Integration (Azure/AWS)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="circle-check"
+                                    class="w-3 h-3 text-[#FFD700]/50 shrink-0"></i> Endpoint Security &amp; NAC</li>
                         </ul>
                     </div>
                 </div>
@@ -1446,8 +1433,8 @@
             </div>
         </section>
 
-        <!-- SECTION 9: CONVERGEPRO™ -->
-        <section id="section-9" class="min-h-screen w-full relative bg-background py-28 overflow-hidden">
+        <!-- SECTION 7: CONVERGEPRO™ -->
+        <section id="section-7" class="min-h-screen w-full relative bg-background py-28 overflow-hidden">
             <div
                 class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#FFD700]/3 rounded-full blur-[150px] pointer-events-none translate-x-1/3">
             </div>
@@ -1641,8 +1628,8 @@
                     <span class="text-secondary text-[10px] font-black uppercase tracking-[0.4em] mr-4">Ideal
                         for:</span>
                     <span
-                        class="px-5 py-2 rounded-full glass-panel text-xs font-bold text-foreground/70 flex items-center gap-2 hover:text-[#FFD700] transition-colors"><i
-                            data-lucide="briefcase" class="w-3 h-3"></i> Boardrooms</span>
+                        class="px-5 py-2 rounded-full glass-panel text-xs font-bold text-foreground/70 flex items-center gap-2 hover:text-[#FFD700] transition-colors"
+                        onclick="scrollToIndex(7)"><i data-lucide="briefcase" class="w-3 h-3"></i> Boardrooms</span>
                     <span
                         class="px-5 py-2 rounded-full glass-panel text-xs font-bold text-foreground/70 flex items-center gap-2 hover:text-[#FFD700] transition-colors"><i
                             data-lucide="book-open" class="w-3 h-3"></i> Training Centers</span>
@@ -1655,20 +1642,17 @@
                     <span
                         class="px-5 py-2 rounded-full glass-panel text-xs font-bold text-foreground/70 flex items-center gap-2 hover:text-[#FFD700] transition-colors"><i
                             data-lucide="mic-2" class="w-3 h-3"></i> Auditoriums</span>
-                    class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold
-                    text-foreground/70">🎭
-                    Auditoriums</span>
                     <span
-                        class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🌐
-                        Hybrid Workspaces</span>
+                        class="px-5 py-2 rounded-full glass-panel text-xs font-bold text-foreground/70 flex items-center gap-2 hover:text-[#FFD700] transition-colors"><i
+                            data-lucide="globe" class="w-3 h-3"></i> Hybrid Workspaces</span>
                 </div>
             </div>
             </div>
             </div>
         </section>
 
-        <!-- SECTION 10: SMART CLASSROOM -->
-        <section id="section-10" class="min-h-screen w-full relative bg-background py-28 overflow-hidden">
+        <!-- SECTION 8: SMART CLASSROOM -->
+        <section id="section-8" class="min-h-screen w-full relative bg-background py-28 overflow-hidden">
             <div
                 class="absolute bottom-0 left-1/2 w-[800px] h-[400px] bg-[#3A428C]/5 rounded-full blur-[150px] pointer-events-none -translate-x-1/2">
             </div>
@@ -1751,27 +1735,27 @@
                     <h4 class="text-[#FFD700] font-black uppercase tracking-widest text-xs mb-4">Designed For</h4>
                     <div class="flex flex-wrap gap-3">
                         <span
-                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🏫
-                            Schools &amp; Colleges</span>
+                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-2 transition-colors hover:text-[#FFD700]">
+                            <i data-lucide="school" class="w-3 h-3"></i> Schools &amp; Colleges</span>
                         <span
-                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🎓
-                            Universities &amp; Institutes</span>
+                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-2 transition-colors hover:text-[#FFD700]">
+                            <i data-lucide="graduation-cap" class="w-3 h-3"></i> Universities &amp; Institutes</span>
                         <span
-                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">📚
-                            Training Centers</span>
+                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-2 transition-colors hover:text-[#FFD700]">
+                            <i data-lucide="book-open" class="w-3 h-3"></i> Training Centers</span>
                         <span
-                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🔬
-                            Research Labs</span>
+                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-2 transition-colors hover:text-[#FFD700]">
+                            <i data-lucide="microscope" class="w-3 h-3"></i> Research Labs</span>
                         <span
-                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70">🏢
-                            Corporate Learning Hubs</span>
+                            class="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-foreground/70 flex items-center gap-2 transition-colors hover:text-[#FFD700]">
+                            <i data-lucide="building-2" class="w-3 h-3"></i> Corporate Learning Hubs</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 11: PRODUCTS & CLOUD -->
-        <section id="section-11" class="min-h-screen w-full relative bg-background py-28 overflow-hidden">
+        <!-- SECTION 9: PRODUCTS & CLOUD -->
+        <section id="section-9" class="min-h-screen w-full relative bg-background py-28 overflow-hidden">
             <div
                 class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#FFD700]/3 rounded-full blur-[120px] pointer-events-none translate-x-1/3 -translate-y-1/2">
             </div>
@@ -1912,8 +1896,8 @@
             </div>
         </section>
 
-        <!-- SECTION 6: KNOWLEDGE BASE (SEO HUB) -->
-        <section id="section-6"
+        <!-- SECTION 10: KNOWLEDGE BASE (SEO HUB) -->
+        <section id="section-10"
             class="h-screen w-full relative snap-center flex items-center justify-center bg-background overflow-hidden">
             <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-center gap-12">
                 <div class="text-center space-y-4 animate-on-scroll">
@@ -1957,7 +1941,7 @@
 
                 <div
                     class="max-w-4xl w-full p-8 rounded-3xl bg-gradient-to-br from-[#3A428C]/10 to-transparent border border-white/5 animate-on-scroll delay-200">
-                    <h4 class="text-[#FFD700] font-bold mb-4 flex items-center gap-2">
+                    <h4 class="text-[#FFD700] font-bold mb-4 flex items-center gap-3">
                         <i data-lucide="info" class="w-4 h-4"></i> Why Businesses Need IT Consulting
                     </h4>
                     <p class="text-sm text-white leading-relaxed font-medium">
@@ -2049,10 +2033,17 @@
                                 </div>
                             </div>
                             <div
-                                class="flex flex-wrap gap-3 pt-2 text-xs text-foreground/50 font-medium border-t border-white/5">
-                                <span>&#10004; Faster MTTR</span><span>&#10004; Clear
-                                    accountability</span><span>&#10004; Training-ready</span><span>&#10004;
-                                    Audit-friendly</span><span>&#10004; ITSM ready</span>
+                                class="flex flex-wrap gap-4 pt-4 text-[10px] text-foreground/40 font-black uppercase tracking-widest border-t border-white/5">
+                                <span class="flex items-center gap-1.5"><i data-lucide="check"
+                                        class="w-3 h-3 text-green-500/50"></i> Faster MTTR</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="check"
+                                        class="w-3 h-3 text-green-500/50"></i> Clear accountability</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="check"
+                                        class="w-3 h-3 text-green-500/50"></i> Training-ready</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="check"
+                                        class="w-3 h-3 text-green-500/50"></i> Audit-friendly</span>
+                                <span class="flex items-center gap-1.5"><i data-lucide="check"
+                                        class="w-3 h-3 text-green-500/50"></i> ITSM ready</span>
                             </div>
                         </div>
                     </details>
@@ -2060,14 +2051,14 @@
             </div>
         </section>
 
-        <!-- SECTION 7: FOOTER & CTA -->
-        <section id="section-7" class="w-full relative snap-start bg-background pt-20">
+        <!-- SECTION 11: FOOTER & CTA -->
+        <section id="section-11" class="w-full relative snap-start bg-background pt-20">
             <div class="max-w-7xl mx-auto px-6 mb-20 text-center animate-on-scroll">
                 <h2 class="text-6xl md:text-9xl font-extrabold tracking-tighter text-foreground mb-8">
                     Ready to Scale?
                 </h2>
                 <div class="flex flex-col md:flex-row items-center justify-center gap-10">
-                    <button class="shiny-cta h-16 px-12 pulse-gold" onclick="scrollToIndex(7)">
+                    <button class="shiny-cta h-16 px-12 pulse-gold" onclick="scrollToIndex(11)">
                         <span>Schedule a Consultation</span>
                     </button>
                     <div class="flex flex-col items-start gap-2">
@@ -2081,8 +2072,29 @@
                         </a>
                     </div>
                 </div>
-                <p class="mt-12 text-neutral-500 uppercase tracking-[0.4em] text-[10px] font-bold">&#128205; Chennai,
-                    India &bull; Smart Infrastructure &bull; March 2026</p>
+
+                <!-- Google Map Integration -->
+                <div
+                    class="mt-16 w-full h-[450px] rounded-[3rem] overflow-hidden border border-white/10 glass-panel animate-on-scroll shadow-2xl relative">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1943.3892812294582!2d80.2052891!3d13.0497624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266c3b7ae0f91%3A0x4e144c638fa94b35!2sSHANTHI%20TOWERS%20VIJAY%20SHANTHI%2C%20Vadapalani%2C%20Chennai%2C%20Tamil%20Nadu%20600026!5e0!3m2!1sen!2sin!4v1772451598642!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="absolute top-6 left-6 block md:flex gap-3">
+                        <a href="https://www.google.com/maps/place/SHANTHI+TOWERS+VIJAY+SHANTHI,+Vadapalani,+Chennai,+Tamil+Nadu+600026/@13.0497624,80.2052891,18.58z"
+                            target="_blank"
+                            class="bg-white/90 backdrop-blur-md text-black px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest flex items-center gap-2 hover:bg-[#FFD700] transition-all shadow-xl">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+
+                <p
+                    class="mt-12 text-neutral-500 uppercase tracking-[0.4em] text-[10px] font-bold flex items-center justify-center gap-3">
+                    <i data-lucide="map-pin" class="w-3 h-3"></i> Chennai, India &bull; Smart Infrastructure &bull;
+                    March 2026
+                </p>
             </div>
 
             <!-- Footer Component -->
@@ -2094,7 +2106,7 @@
                             <div class="lg:col-span-2">
                                 <div class="flex items-center gap-4 mb-8">
                                     <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Systems"
-                                        class="h-10 w-auto dark:invert-0 light:invert transition-all">
+                                        class="h-10 w-auto transition-all">
                                     <div class="h-6 w-px bg-foreground/20"></div>
                                     <h3 class="text-xl font-bold text-foreground tracking-tight uppercase">Smart IT
                                         Solutions
@@ -2108,18 +2120,19 @@
                                 <div class="flex gap-4">
                                     <div
                                         class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-1 relative overflow-hidden group">
-                                        <div class="absolute top-2 right-2 flex items-center gap-1.5">
-                                            <span class="relative flex h-2 w-2">
-                                                <span
-                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                                <span
-                                                    class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                                            </span>
+                                        <div class="flex items-center gap-2 mb-1">
                                             <span
-                                                class="text-[9px] font-black text-green-400 opacity-0 group-hover:opacity-100 transition-opacity">LIVE</span>
+                                                class="text-[10px] font-black uppercase tracking-[0.2em] text-[#FFD700]">Headquarters</span>
+                                            <div class="flex items-center gap-1.5 translate-y-[1px]">
+                                                <span class="relative flex h-2 w-2">
+                                                    <span
+                                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                                    <span
+                                                        class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                                </span>
+                                                <span class="text-[9px] font-black text-green-400">LIVE</span>
+                                            </div>
                                         </div>
-                                        <span
-                                            class="text-[10px] font-black uppercase tracking-[0.2em] text-[#FFD700]">Headquarters</span>
                                         <span class="text-foreground font-bold text-sm tracking-wide">Chennai,
                                             India</span>
                                     </div>
@@ -2144,22 +2157,22 @@
                                                 Email</label>
                                             <input id="email" name="email" type="email" required
                                                 placeholder="name@company.com"
-                                                class="w-full outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 dark:bg-black/40 light:bg-slate-50 border-white/10 dark:border-white/10 light:border-black/10 border rounded-xl py-3 px-4">
+                                                class="w-full outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 border-white/10 border rounded-xl py-3 px-4">
                                         </div>
                                         <div class="sm:col-span-1">
                                             <label for="service"
                                                 class="block text-[10px] font-black uppercase tracking-widest text-[#FFD700] mb-2">Service
                                                 Needed</label>
                                             <select id="service" name="service"
-                                                class="w-full appearance-none outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 dark:bg-black/40 light:bg-slate-50 border-white/10 dark:border-white/10 light:border-black/10 border rounded-xl py-3 px-4">
-                                                <option class="dark:bg-neutral-900 light:bg-white" value="infra">
+                                                class="w-full appearance-none outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 border-white/10 border rounded-xl py-3 px-4">
+                                                <option class="bg-neutral-900" value="infra">
                                                     Enterprise Infrastructure
                                                 </option>
-                                                <option class="dark:bg-neutral-900 light:bg-white" value="cloud">Cloud
+                                                <option class="bg-neutral-900" value="cloud">Cloud
                                                     Migration</option>
-                                                <option class="dark:bg-neutral-900 light:bg-white" value="amc">IT AMC
+                                                <option class="bg-neutral-900" value="amc">IT AMC
                                                     Services</option>
-                                                <option class="dark:bg-neutral-900 light:bg-white" value="consulting">IT
+                                                <option class="bg-neutral-900" value="consulting">IT
                                                     Consulting</option>
                                             </select>
                                         </div>
@@ -2169,7 +2182,7 @@
                                                 Brief</label>
                                             <textarea id="message" name="message" rows="3"
                                                 placeholder="Describe your networking or cloud requirements..."
-                                                class="w-full outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 dark:bg-black/40 light:bg-slate-50 border-white/10 dark:border-white/10 light:border-black/10 border rounded-xl py-3 px-4"></textarea>
+                                                class="w-full outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 border-white/10 border rounded-xl py-3 px-4"></textarea>
                                         </div>
                                         <div class="sm:col-span-2 flex items-center justify-end mt-2">
                                             <button type="submit"
@@ -2215,7 +2228,7 @@
                                     <li><a href="#section-4" onclick="scrollToIndex(4)"
                                             class="text-secondary hover:text-foreground transition">Cloud Security</a>
                                     </li>
-                                    <li><a href="#section-11" onclick="scrollToIndex(11)"
+                                    <li><a href="#section-9" onclick="scrollToIndex(9)"
                                             class="text-secondary hover:text-foreground transition">SaaS Licensing</a>
                                     </li>
                                 </ul>
@@ -2224,41 +2237,43 @@
                                 <h4 class="text-[#FFD700] text-[10px] font-black uppercase tracking-[0.3em] mb-4">
                                     Solutions</h4>
                                 <ul class="space-y-3 text-sm font-medium">
+                                    <li><a href="#section-6" onclick="scrollToIndex(6)"
+                                            class="text-xs text-secondary hover:text-[#FFD700] transition-colors">UniSphere™</a>
+                                    </li>
+                                    <li><a href="#section-7" onclick="scrollToIndex(7)"
+                                            class="text-xs text-secondary hover:text-[#FFD700] transition-colors">ConvergePro™</a>
+                                    </li>
                                     <li><a href="#section-8" onclick="scrollToIndex(8)"
-                                            class="text-secondary hover:text-foreground transition">UniSphere&#8482;</a>
+                                            class="text-xs text-secondary hover:text-[#FFD700] transition-colors">Smart
+                                            Classroom™</a>
                                     </li>
                                     <li><a href="#section-9" onclick="scrollToIndex(9)"
-                                            class="text-secondary hover:text-foreground transition">ConvergePro&#8482;</a>
+                                            class="text-xs text-secondary hover:text-[#FFD700] transition-colors">Products
+                                            &amp; Cloud</a>
                                     </li>
-                                    <li><a href="#section-10" onclick="scrollToIndex(10)"
-                                            class="text-secondary hover:text-foreground transition">Smart
-                                            Classroom&#8482;</a></li>
-                                    <li><a href="#section-11" onclick="scrollToIndex(11)"
-                                            class="text-secondary hover:text-foreground transition">Products &amp;
-                                            Cloud</a></li>
-                                </ul>
                             </div>
                             <div>
                                 <h4 class="text-[#FFD700] text-[10px] font-black uppercase tracking-[0.3em] mb-4">
                                     Company</h4>
                                 <ul class="space-y-3 text-sm font-medium">
                                     <li><a href="#section-1" onclick="scrollToIndex(1)"
-                                            class="text-secondary hover:text-foreground transition">About BG Systems</a>
-                                    </li>
+                                            class="text-xs text-secondary hover:text-[#FFD700] transition-colors">About
+                                            Us</a></li>
                                     <li><a href="#section-5" onclick="scrollToIndex(5)"
-                                            class="text-secondary hover:text-foreground transition">AMC Solutions</a>
+                                            class="text-xs text-secondary hover:text-[#FFD700] transition-colors">Infrastructure</a>
                                     </li>
-                                    <li><a href="#section-6" onclick="scrollToIndex(6)"
-                                            class="text-secondary hover:text-foreground transition">Knowledge Base</a>
+                                    <li><a href="#section-10" onclick="scrollToIndex(10)"
+                                            class="text-xs text-secondary hover:text-[#FFD700] transition-colors">Knowledge
+                                            Base</a></li>
+                                    <li><a href="#section-11" onclick="scrollToIndex(11)"
+                                            class="text-xs text-secondary hover:text-[#FFD700] transition-colors">Contact</a>
                                     </li>
-                                    <li><a href="#contact" onclick="scrollToIndex(7)"
-                                            class="text-secondary hover:text-foreground transition">Contact Hub</a></li>
-                                </ul>
                             </div>
                             <div>
                                 <h4 class="text-[#FFD700] text-[10px] font-black uppercase tracking-[0.3em] mb-4">Office
                                     Hub</h4>
-                                <p class="text-foreground font-bold text-sm tracking-wide mb-2">&#128205; Chennai, India
+                                <p class="text-foreground font-bold text-sm tracking-wide mb-2 flex items-center gap-2">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-[#FFD700]"></i> Chennai, India
                                 </p>
                                 <p class="text-neutral-500 text-xs leading-relaxed mb-4">Serving enterprise businesses
                                     across the Indian subcontinent.</p>
@@ -2372,20 +2387,26 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.id;
-                    const index = parseInt(id.split('-')[1]);
+                    const idParts = id.split('-');
+                    if (idParts.length < 2) return;
+                    const index = parseInt(idParts[1]);
 
                     dots.forEach((dot, i) => {
                         if (i === index) {
                             dot.classList.add('active');
-                            dot.classList.remove('bg-white/20');
+                            dot.style.backgroundColor = '#FFD700';
+                            dot.style.height = '32px';
+                            dot.style.opacity = '1';
                         } else {
                             dot.classList.remove('active');
-                            dot.classList.add('bg-white/20');
+                            dot.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                            dot.style.height = '24px';
+                            dot.style.opacity = '0.4';
                         }
                     });
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.2 });
 
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
@@ -2507,31 +2528,192 @@
         window.addEventListener('resize', updateCanvasSize);
         updateCanvasSize();
 
-        // Theme Toggle Logic
-        function toggleTheme() {
-            const html = document.documentElement;
-            const darkIcon = document.querySelector('.dark-icon');
-            const lightIcon = document.querySelector('.light-icon');
+        // Theme Toggle Logic Removed
+    </script>
 
-            if (html.classList.contains('light')) {
-                html.classList.remove('light');
-                localStorage.setItem('theme', 'dark');
-                darkIcon.classList.remove('hidden');
-                lightIcon.classList.add('hidden');
-            } else {
-                html.classList.add('light');
-                localStorage.setItem('theme', 'light');
-                darkIcon.classList.add('hidden');
-                lightIcon.classList.remove('hidden');
+    <!-- Chatbot Widget -->
+    <div class="fixed bottom-6 right-6 z-[999]">
+        <!-- Chat Bubble Button -->
+        <button id="chat-toggle"
+            class="h-16 w-16 bg-[#FFD700] rounded-full shadow-[0_10px_40px_rgba(255,215,0,0.3)] flex items-center justify-center p-3.5 hover:scale-110 transition-transform duration-300">
+            <div id="chat-icon-open" class="w-full h-full flex items-center justify-center">
+                <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Systems"
+                    class="w-full h-auto brightness-0">
+            </div>
+            <i data-lucide="x" id="chat-icon-close" class="w-7 h-7 hidden text-black"></i>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window"
+            class="absolute bottom-20 right-0 w-[400px] h-[600px] glass-panel rounded-[2.5rem] border border-white/10 shadow-3xl opacity-0 scale-95 pointer-events-none transition-all duration-300 origin-bottom-right flex flex-col overflow-hidden">
+            <!-- Header -->
+            <div
+                class="bg-gradient-to-r from-neutral-900 to-neutral-800 p-8 border-b border-white/10 shrink-0 flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="h-12 w-12 bg-white rounded-xl flex items-center justify-center p-2 shrink-0 overflow-hidden">
+                        <img src="BG Systems_CREYT_Logo_Final_Transparent (2).png" alt="BG Logo" class="w-full h-auto">
+                    </div>
+                    <div>
+                        <h4 class="font-black text-xl text-white tracking-tighter uppercase italic text-sm">BG SYSTEMS
+                        </h4>
+                        <div class="flex items-center gap-1.5">
+                            <span class="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                            <span class="text-[10px] text-green-500/80 font-bold uppercase tracking-widest">Always
+                                Active</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="chat-close-header"
+                    class="text-white bg-white/10 hover:bg-white/20 rounded-xl transition-all p-2.5 border border-white/10 flex items-center justify-center">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Content Area (Conversational) -->
+            <div id="chat-content" class="flex-1 flex flex-col overflow-hidden bg-neutral-900/60">
+                <div id="chat-messages" class="flex-1 overflow-y-auto p-6 space-y-4 custom-scrollbar">
+                    <!-- Messages will be injected here -->
+                </div>
+
+                <!-- Input Area -->
+                <div class="p-6 border-t border-white/5 bg-black/40">
+                    <form id="chat-form-conversational" class="flex flex-col gap-3">
+                        <div class="relative flex items-center gap-3">
+                            <input type="text" id="chat-input" placeholder="Type your response..."
+                                class="flex-1 bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFD700] transition-all">
+                            <button type="submit" id="chat-send-btn"
+                                class="h-12 w-28 bg-[#FFD700] rounded-2xl flex items-center justify-center text-black font-black uppercase text-[10px] tracking-widest hover:scale-105 transition-transform shrink-0 shadow-lg gap-2">
+                                <span>Send</span>
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <p class="text-[7px] text-neutral-600 text-center uppercase tracking-widest opacity-50">
+                            Press Enter or Click Send
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('chat-toggle');
+            const chatWindow = document.getElementById('chat-window');
+            const openIcon = document.getElementById('chat-icon-open');
+            const closeIcon = document.getElementById('chat-icon-close');
+            let isOpen = false;
+
+            const toggleChat = () => {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    chatWindow.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+                    chatWindow.classList.add('opacity-100', 'scale-100');
+                    openIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                } else {
+                    chatWindow.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+                    chatWindow.classList.remove('opacity-100', 'scale-100');
+                    openIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                }
             }
-        }
 
-        // Initialize Theme
-        if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-            document.documentElement.classList.add('light');
-            document.querySelector('.dark-icon').classList.add('hidden');
-            document.querySelector('.light-icon').classList.remove('hidden');
-        }
+            toggleBtn.addEventListener('click', () => {
+                toggleChat();
+                if (isOpen && currentStep === 0 && chatMessages.children.length === 0) {
+                    startConversation();
+                }
+            });
+
+            document.getElementById('chat-close-header').addEventListener('click', toggleChat);
+
+            // Conversational Logic
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInput = document.getElementById('chat-input');
+            const chatForm = document.getElementById('chat-form-conversational');
+
+            let currentStep = 0;
+            let userData = { name: '', email: '', message: '' };
+
+            const steps = [
+                {
+                    message: "Hi! Let us know how we can help and we’ll respond shortly.",
+                    nextMessage: "Starting off, what's your name?"
+                },
+                {
+                    field: 'name',
+                    message: "Nice to meet you, {name}! What's your business email?"
+                },
+                {
+                    field: 'email',
+                    message: "Got it. How can we help you today?"
+                },
+                {
+                    field: 'message',
+                    message: "Thank you! Our experts will review your request and contact you shortly."
+                }
+            ];
+
+            function addMessage(text, isUser = false) {
+                const bubble = document.createElement('div');
+                bubble.className = `flex ${isUser ? 'justify-end' : 'justify-start'} animate-in fade-in slide-in-from-bottom-2 duration-300`;
+
+                const inner = document.createElement('div');
+                inner.className = isUser
+                    ? 'bg-[#FFD700] text-black rounded-3xl rounded-tr-none px-5 py-3 text-sm font-bold shadow-lg max-w-[85%]'
+                    : 'bg-white/10 border border-white/10 text-white rounded-3xl rounded-tl-none px-5 py-3 text-sm font-medium backdrop-blur-md max-w-[85%]';
+
+                inner.textContent = text;
+                bubble.appendChild(inner);
+                chatMessages.appendChild(bubble);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function startConversation() {
+                addMessage(steps[0].message);
+                setTimeout(() => {
+                    addMessage(steps[0].nextMessage);
+                    chatInput.focus();
+                }, 800);
+            }
+
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const input = chatInput.value.trim();
+                if (!input || currentStep >= steps.length - 1) return;
+
+                // Add user message
+                addMessage(input, true);
+                chatInput.value = '';
+
+                // Store data
+                const stepDetails = steps[currentStep + 1];
+                if (currentStep === 0) userData.name = input;
+                else if (currentStep === 1) userData.email = input;
+                else if (currentStep === 2) userData.message = input;
+
+                currentStep++;
+
+                // Bot response
+                setTimeout(() => {
+                    const nextStep = steps[currentStep];
+                    let botMsg = nextStep.message.replace('{name}', userData.name);
+                    addMessage(botMsg);
+
+                    if (currentStep === steps.length - 1) {
+                        chatInput.disabled = true;
+                        chatInput.placeholder = "Conversation ended";
+                        console.log('Lead Captured:', userData);
+                    }
+                }, 800);
+            });
+
+            // Re-initialize icons to catch the chatbot elements
+            lucide.createIcons();
+        });
     </script>
 
 </body>

@@ -6,6 +6,8 @@
   "scripts": {
     "start": "npx -y serve ."
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "tailwindcss": "^4.2.1"
+  }
 }
