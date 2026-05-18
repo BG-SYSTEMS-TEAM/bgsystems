@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth dark">
 
 <head>
@@ -10,6 +10,7 @@
         content="BG Systems is a leading IT solutions company in Chennai offering network infrastructure, cloud migration, computer sales & IT AMC services. Secure and scalable business IT solutions">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.474.0/dist/umd/lucide.min.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link
@@ -585,17 +586,17 @@
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFD700] opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-[#FFD700]"></span>
                         </span>
-                        <span>Chennai's Leading IT Partner</span>
+                        <span data-cms="hero_badge">Chennai's Leading IT Partner</span>
                     </div>
 
                     <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.85] text-foreground">
-                        Future-Ready <br>
-                        <span
+                        <span data-cms="hero_title_1">Future-Ready</span> <br>
+                        <span data-cms="hero_title_accent"
                             class="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] via-white to-[#FFD700]">IT
                             Infrastructure.</span>
                     </h1>
 
-                    <p class="text-xl md:text-2xl text-neutral-300 max-w-xl font-medium leading-relaxed">
+                    <p data-cms="hero_subtitle" class="text-xl md:text-2xl text-neutral-300 max-w-xl font-medium leading-relaxed">
                         BG Systems delivers enterprise-grade IT infrastructure, cloud solutions, and
                         cybersecurity-backed network systems that help businesses scale securely and efficiently.
                     </p>
@@ -607,6 +608,7 @@
 
                         <button
                             class="group relative inline-flex items-center justify-center px-8 py-4 text-[#FFD700] tracking-wider text-sm font-bold uppercase transition-all hover:text-foreground"
+                            data-cms-href="contact_phone_1"
                             onclick="window.location.href='tel:+919843099285'">
                             <span class="mr-3">Talk to an IT Expert</span>
                             <div
@@ -622,7 +624,7 @@
                                 class="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
                                 <i data-lucide="shield-check" class="w-5 h-5 text-[#FFD700]"></i>
                             </div>
-                            <span class="text-sm font-semibold tracking-wide text-foreground/80">Enterprise
+                            <span data-cms="feature_1_title" class="text-sm font-semibold tracking-wide text-foreground/80">Enterprise
                                 Security</span>
                         </div>
                         <div class="flex items-center gap-3">
@@ -630,7 +632,7 @@
                                 class="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10">
                                 <i data-lucide="zap" class="w-5 h-5 text-[#FFD700]"></i>
                             </div>
-                            <span class="text-sm font-semibold tracking-wide text-foreground/80">99.9% Uptime</span>
+                            <span data-cms="feature_2_title" class="text-sm font-semibold tracking-wide text-foreground/80">99.9% Uptime</span>
                         </div>
                     </div>
                 </div>
@@ -760,9 +762,9 @@
                     <div
                         class="inline-flex items-center gap-2 text-[#FFD700] text-xs uppercase tracking-[0.4em] font-black">
                         <i data-lucide="binary" class="w-4 h-4"></i>
-                        <span>Chennai's Core IT Partner</span>
+                        <span data-cms="about_badge">Chennai's Core IT Partner</span>
                     </div>
-                    <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-foreground leading-[0.9]">
+                    <h2 data-cms="about_title" class="text-5xl md:text-7xl font-extrabold tracking-tighter text-foreground leading-[0.9]">
                         Elite Managed <br>
                         <span class="text-brand-yellow drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]">Solutions.</span>
                     </h2>
@@ -770,7 +772,7 @@
                         <img src="elite-managed-solutions.png" alt="Elite Managed IT Solutions"
                             class="w-full h-48 object-cover">
                     </div>
-                    <p class="text-lg text-white/80 leading-relaxed font-medium">
+                    <p data-cms="about_description" class="text-lg text-white/80 leading-relaxed font-medium">
                         We build more than just networks; we curate digital foundations for enterprises that demand
                         precision. From high-speed fiber backbone to complex cloud architecture, BG Systems is your
                         strategic infrastructure partner.
@@ -2157,11 +2159,25 @@
                                     </h4>
                                     <form id="contact-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div class="sm:col-span-1">
+                                            <label for="contact-name"
+                                                class="block text-[10px] font-black uppercase tracking-widest text-[#FFD700] mb-2">Full Name</label>
+                                            <input id="contact-name" name="name" type="text" required
+                                                placeholder="John Doe"
+                                                class="w-full outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 border-white/10 border rounded-xl py-3 px-4">
+                                        </div>
+                                        <div class="sm:col-span-1">
                                             <label for="email"
                                                 class="block text-[10px] font-black uppercase tracking-widest text-[#FFD700] mb-2">Business
                                                 Email</label>
                                             <input id="email" name="email" type="email" required
                                                 placeholder="name@company.com"
+                                                class="w-full outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 border-white/10 border rounded-xl py-3 px-4">
+                                        </div>
+                                        <div class="sm:col-span-1">
+                                            <label for="phone"
+                                                class="block text-[10px] font-black uppercase tracking-widest text-[#FFD700] mb-2">Phone Number</label>
+                                            <input id="phone" name="phone" type="tel"
+                                                placeholder="+91 98765 43210"
                                                 class="w-full outline-none focus:ring-2 focus:ring-[#FFD700] transition text-sm text-foreground bg-black/40 border-white/10 border rounded-xl py-3 px-4">
                                         </div>
                                         <div class="sm:col-span-1">
@@ -2283,13 +2299,13 @@
                                 <p class="text-neutral-500 text-xs leading-relaxed mb-4">Serving enterprise businesses
                                     across the Indian subcontinent.</p>
                                 <div class="flex flex-col gap-1">
-                                    <a href="tel:+919843099285"
+                                    <a href="tel:+919843099285" data-cms="contact_phone_1"
                                         class="text-xs text-secondary hover:text-[#FFD700] transition font-medium">+91
                                         98430 99285</a>
-                                    <a href="tel:+919080700172"
+                                    <a href="tel:+919080700172" data-cms="contact_phone_2"
                                         class="text-xs text-secondary hover:text-[#FFD700] transition font-medium">+91
                                         90807 00172</a>
-                                    <a href="mailto:info@bgsystems.in"
+                                    <a href="mailto:info@bgsystems.in" data-cms="contact_email"
                                         class="text-xs text-secondary hover:text-[#FFD700] transition font-medium">info@bgsystems.in</a>
                                 </div>
                             </div>
@@ -2550,7 +2566,7 @@
 
         <!-- Chat Window -->
         <div id="chat-window"
-            class="absolute bottom-20 right-0 w-[400px] h-[600px] glass-panel rounded-[2.5rem] border border-white/10 shadow-3xl opacity-0 scale-95 pointer-events-none transition-all duration-300 origin-bottom-right flex flex-col overflow-hidden">
+            class="absolute bottom-20 right-0 w-[calc(100vw-2rem)] sm:w-[400px] h-[600px] max-h-[80vh] sm:max-h-[600px] glass-panel rounded-[2.5rem] border border-white/10 shadow-3xl opacity-0 scale-95 pointer-events-none transition-all duration-300 origin-bottom-right flex flex-col overflow-hidden">
             <!-- Header -->
             <div
                 class="bg-gradient-to-r from-neutral-900 to-neutral-800 p-8 border-b border-white/10 shrink-0 flex items-center justify-between">
@@ -2749,8 +2765,9 @@
                     const data = {
                         timestamp: new Date().toLocaleString(),
                         source: 'Contact Form',
-                        name: formData.get('email').split('@')[0], // Extract name from email as placeholder
+                        name: formData.get('name'),
                         email: formData.get('email'),
+                        phone: formData.get('phone') || '',
                         message: `Service: ${formData.get('service')}\n\nBrief: ${formData.get('message')}`
                     };
 
@@ -2776,7 +2793,80 @@
                     contactForm.reset();
                 });
             }
+
+            // ==========================================
+            // DECAP CMS JSON CONTENT LOADER
+            // ==========================================
+            (function() {
+                // 1. Instant Load: Pull from local cache to avoid layout shifts
+                const cachedCMS = localStorage.getItem('bg_systems_cms');
+                if (cachedCMS) {
+                    applyCMSData(JSON.parse(cachedCMS));
+                }
+
+                // 2. Background Sync: Pull fresh data from content.json
+                fetch('./data/content.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data && typeof data === 'object') {
+                            // Store to cache for the next load
+                            localStorage.setItem('bg_systems_cms', JSON.stringify(data));
+                            // Render fresh updates
+                            applyCMSData(data);
+                        }
+                    })
+                    .catch(err => console.error('CMS fetch failed:', err));
+
+                // Helper to map JSON content to DOM elements
+                function applyCMSData(data) {
+                    // Update main content tags
+                    document.querySelectorAll('[data-cms]').forEach(el => {
+                        const key = el.getAttribute('data-cms');
+                        if (data[key] !== undefined) {
+                            if (el.tagName === 'IMG') {
+                                el.src = data[key];
+                            } else if (el.tagName === 'A' && el.href.startsWith('tel:')) {
+                                el.href = 'tel:' + data[key].replace(/\s+/g, '');
+                                el.innerHTML = data[key];
+                            } else if (el.tagName === 'A' && el.href.startsWith('mailto:')) {
+                                el.href = 'mailto:' + data[key];
+                                el.innerHTML = data[key];
+                            } else {
+                                el.innerHTML = data[key];
+                            }
+                        }
+                    });
+
+                    // Update dynamic href and click handlers
+                    document.querySelectorAll('[data-cms-href]').forEach(el => {
+                        const key = el.getAttribute('data-cms-href');
+                        if (data[key] !== undefined) {
+                            const cleanVal = data[key].replace(/\s+/g, '');
+                            if (el.tagName === 'A') {
+                                if (el.href.startsWith('tel:')) el.href = 'tel:' + cleanVal;
+                                else if (el.href.startsWith('mailto:')) el.href = 'mailto:' + cleanVal;
+                                else el.href = data[key];
+                            } else if (el.hasAttribute('onclick')) {
+                                el.setAttribute('onclick', `window.location.href='tel:${cleanVal}'`);
+                            }
+                        }
+                    });
+                }
+            })();
         });
+    </script>
+
+    <!-- Netlify Identity Login Redirect -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
     </script>
 
 </body>

@@ -1,0 +1,39 @@
+local_backend: true
+backend:
+  name: git-gateway
+  branch: main # Change this to your active branch (e.g. main or master)
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "website_content"
+    label: "Website Content"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "home"
+        label: "Homepage Copy"
+        file: "data/content.json"
+        fields:
+          # Hero Section
+          - { label: "Hero Badge Label", name: "hero_badge", widget: "string" }
+          - { label: "Hero Title Part 1", name: "hero_title_1", widget: "string" }
+          - { label: "Hero Title Accent (Gold)", name: "hero_title_accent", widget: "string" }
+          - { label: "Hero Subtitle Text", name: "hero_subtitle", widget: "text" }
+          
+          # Contact Details
+          - { label: "Primary Phone Number", name: "contact_phone_1", widget: "string" }
+          - { label: "Secondary Phone Number", name: "contact_phone_2", widget: "string" }
+          - { label: "Sales Email Address", name: "contact_email", widget: "string" }
+          
+          # Hero Features / Badges
+          - { label: "Feature 1 Title", name: "feature_1_title", widget: "string" }
+          - { label: "Feature 2 Title", name: "feature_2_title", widget: "string" }
+          - { label: "Feature 3 Title", name: "feature_3_title", widget: "string" }
+          
+          # About Section
+          - { label: "About Section Badge", name: "about_badge", widget: "string" }
+          - { label: "About Title", name: "about_title", widget: "string" }
+          - { label: "About Description Text", name: "about_description", widget: "text" }
