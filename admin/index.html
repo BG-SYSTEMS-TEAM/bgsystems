@@ -84,14 +84,15 @@
         document.body.classList.remove('flex', 'items-center', 'justify-center', 'p-4');
         document.body.className = '';
         
-        // Dynamically inject Netlify Identity and Decap CMS scripts
+        // Dynamically inject Netlify Identity and Decap CMS scripts sequentially to prevent race conditions
         const identityScript = document.createElement('script');
         identityScript.src = "https://identity.netlify.com/v1/netlify-identity-widget.js";
+        identityScript.onload = () => {
+          const cmsScript = document.createElement('script');
+          cmsScript.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
+          document.body.appendChild(cmsScript);
+        };
         document.head.appendChild(identityScript);
-
-        const cmsScript = document.createElement('script');
-        cmsScript.src = "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
-        document.body.appendChild(cmsScript);
       }, 500);
     }
 
