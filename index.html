@@ -2858,6 +2858,9 @@
 
     <!-- Netlify Identity Login Redirect -->
     <script>
+        // Ensure Netlify Identity knows the primary app domain (required for custom domains)
+        window.localStorage.setItem("netlifySiteURL", "https://bgsystems.netlify.app");
+
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {

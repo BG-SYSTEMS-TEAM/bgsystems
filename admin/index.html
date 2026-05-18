@@ -74,6 +74,9 @@
 
     // Handle authentication success
     function initCMS() {
+      // Ensure Netlify Identity knows the primary app domain (required for custom domains)
+      window.localStorage.setItem("netlifySiteURL", "https://bgsystems.netlify.app");
+
       // Remove password gate completely
       passwordGate.classList.add('scale-95', 'opacity-0');
       setTimeout(() => {
